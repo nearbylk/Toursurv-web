@@ -32,7 +32,7 @@ export default function Hero() {
       id="home"
       className="relative overflow-hidden bg-gradient-to-b from-white via-white to-[#f4f4f4]"
     >
-      <div className="mx-auto max-w-[1440px] px-6 pb-16 pt-16 lg:px-16 lg:pt-24">
+      <div className="mx-auto max-w-[1440px] px-6 pb-16 pt-32 lg:px-16 lg:pt-48">
         <div className="mx-auto max-w-4xl text-center">
           <h1 className="font-poppins text-5xl leading-[1.1] text-[#242424] sm:text-6xl md:text-7xl lg:text-[90px] lg:leading-[1.1]">
             We Build <span className="font-semibold">Digital</span> <br className="hidden sm:block" />
@@ -56,7 +56,7 @@ export default function Hero() {
           </a>
         </div>
 
-        <div className="relative mx-auto mt-16 grid max-w-5xl grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
+        <div className="relative mx-auto mt-32 grid max-w-5xl grid-cols-2 gap-4 sm:grid-cols-3 lg:mt-40 lg:grid-cols-4">
           {COLLAGE.map((item, i) => (
             <div
               key={i}
@@ -166,7 +166,7 @@ export default function Hero() {
                 </svg>
               </a>
             </div>
-            <svg className="h-6 w-6 opacity-70" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4.75 9.54169L9.79167 4.5" stroke="white" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round"/><path d="M5.29167 4.66669H9.83333V9.20835" stroke="white" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round"/></svg>
+            <svg className="h-6 w-6 opacity-70" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4.75 9.54169L9.79167 4.5" stroke="white" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" /><path d="M5.29167 4.66669H9.83333V9.20835" stroke="white" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" /></svg>
           </div>
         </div>
       </div>
