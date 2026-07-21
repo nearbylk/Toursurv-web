@@ -43,26 +43,41 @@ export default function About() {
           <span className="font-semibold">software solutions.</span>
         </h2>
 
-        {/* <div className="mt-14 flex flex-wrap items-center justify-center gap-10 sm:justify-between lg:gap-6">
-          {TECH_ICONS.map((src, i) => (
-            <img
-              key={i}
-              src={src}
-              alt=""
-              className="h-16 w-auto object-contain opacity-90 sm:h-20"
-            />
-          ))}
-        </div> */}
-
-        <div className="mt-16 grid grid-cols-2 gap-x-8 gap-y-8 sm:grid-cols-4">
+        {/* ── PILLARS: horizontal icon + text rows ── */}
+        <div className="mt-16 grid grid-cols-2 gap-x-8 gap-y-6 sm:grid-cols-4">
           {PILLARS.map((p) => (
-            <div key={p.title} className="flex flex-col items-center text-center">
-              <img src={p.icon} alt="" className="h-12 w-12 object-contain" />
-              <h3 className="mt-4 bg-brand-gradient-v bg-clip-text font-poppins text-lg font-medium text-transparent">
+            <div
+              key={p.title}
+              className="flex flex-row items-center gap-3 text-left justify-start"
+            >
+              <img src={p.icon} alt="" className="h-14 w-14 shrink-0 object-contain" />
+              <h3 className="max-w-[140px] bg-brand-gradient-v bg-clip-text font-poppins text-sm font-semibold leading-tight text-transparent md:text-base">
                 {p.title}
               </h3>
             </div>
           ))}
+        </div>
+
+        {/* ── TECH STACK banner ── */}
+        <div className="mt-14 flex items-stretch overflow-hidden rounded-[24px] bg-[#f3f4f6]">
+          {/* Left: white curved label */}
+          {/* <div className="flex shrink-0 items-center bg-white pr-10 rounded-br-[60px] rounded-tr-[60px] py-6 pl-6 md:pl-0 md:pr-12">
+            <p className="whitespace-nowrap font-poppins text-base font-semibold text-[#191919] md:text-lg">
+              / OUR TECH STACK
+            </p>
+          </div> */}
+
+          {/* Right: tech icons row */}
+          {/* <div className="flex flex-1 flex-wrap items-center gap-6 px-8 py-6 sm:gap-10">
+            {TECH_ICONS.map((src, i) => (
+              <img
+                key={i}
+                src={src}
+                alt=""
+                className="h-10 w-auto object-contain grayscale opacity-60 transition-all duration-300 hover:grayscale-0 hover:opacity-100 sm:h-12"
+              />
+            ))}
+          </div> */}
         </div>
       </div>
     </section>

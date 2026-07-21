@@ -11,7 +11,8 @@ export default function Footer() {
         >
           <path
             fill="#0f0f14"
-            d="M0,120 L0,80 L550,80 C650,80 700,0 850,0 L1440,0 L1440,120 Z"
+            d="M0,120 L0,80 L600,80 C650,80 700,0 750,0 L1440,0 L1440,120 Z"
+
           />
         </svg>
       </div>

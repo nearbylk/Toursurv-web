@@ -6,6 +6,7 @@ import Services from "@/components/home/Services";
 import Work from "@/components/home/Work";
 import Clients from "@/components/home/Clients";
 import Cta from "@/components/home/Cta";
+import Techstack from "@/components/home/Techstack";
 
 export default function Index() {
   return (
@@ -14,6 +15,7 @@ export default function Index() {
       <main>
         <Hero />
         <About />
+        <Techstack />
         <Services />
         <Work />
         <Clients />
