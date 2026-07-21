@@ -1,4 +1,45 @@
+import { useState, useEffect, useRef } from "react";
 
+// ── Count-up hook ────────────────────────────────────────────────────────────
+function useCountUp(target: number, duration = 1800) {
+  const [count, setCount] = useState(0);
+  const ref = useRef<HTMLDivElement | null>(null);
+  const started = useRef(false);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !started.current) {
+          started.current = true;
+          const startTime = performance.now();
+
+          const tick = (now: number) => {
+            const elapsed = now - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+            // ease-out quad
+            const eased = 1 - (1 - progress) * (1 - progress);
+            setCount(Math.floor(eased * target));
+            if (progress < 1) requestAnimationFrame(tick);
+          };
+
+          requestAnimationFrame(tick);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.3 }
+    );
+
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [target, duration]);
+
+  return { count, ref };
+}
+
+// ── Data ─────────────────────────────────────────────────────────────────────
 const SERVICES = [
   {
     icon: "https://api.builder.io/api/v1/image/assets/TEMP/448e6751651adcb3fbc74ebf776375d01f6cc1ae?width=144",
@@ -38,11 +79,12 @@ const SOCIAL = {
   desc: "Boost your online presence with engaging content and effective social media marketing.",
 };
 
-const STATS = [
-  { value: "50+", label: "Projects Completed" },
-  { value: "30+", label: "Happy Clients" },
-  { value: "7+", label: "Years of experience" },
-  { value: "98%", label: "Client Satisfaction" },
+// target number + suffix symbol
+const STATS: { target: number; suffix: string; label: string }[] = [
+  { target: 50, suffix: "+", label: "Projects Completed" },
+  { target: 30, suffix: "+", label: "Happy Clients" },
+  { target: 7,  suffix: "+", label: "Years of experience" },
+  { target: 98, suffix: "%", label: "Client Satisfaction" },
 ];
 
 const STAT_ICONS = [
@@ -71,6 +113,7 @@ const STAT_ICONS = [
   />,
 ];
 
+// ── Sub-components ────────────────────────────────────────────────────────────
 function ServiceCard({
   icon,
   title,
@@ -100,6 +143,50 @@ function ServiceCard({
   );
 }
 
+function StatCard({
+  target,
+  suffix,
+  label,
+  icon,
+}: {
+  target: number;
+  suffix: string;
+  label: string;
+  icon: React.ReactNode;
+}) {
+  const { count, ref } = useCountUp(target);
+
+  return (
+    <div
+      ref={ref}
+      className="flex flex-col items-center justify-center gap-3 px-6 text-center lg:flex-1 lg:py-2"
+    >
+      {/* Icon circle — no overflow-hidden so paths aren't clipped */}
+      <div className="flex h-14 w-14 items-center justify-center rounded-full bg-white/15">
+        <svg
+          width="36"
+          height="36"
+          viewBox="0 0 49 49"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          overflow="visible"
+        >
+          {icon}
+        </svg>
+      </div>
+      {/* Animated number */}
+      <p className="font-poppins text-4xl font-semibold leading-none sm:text-5xl">
+        {count}{suffix}
+      </p>
+      {/* Label */}
+      <p className="font-poppins text-xs font-medium leading-snug opacity-80 sm:text-sm">
+        {label}
+      </p>
+    </div>
+  );
+}
+
+// ── Main component ────────────────────────────────────────────────────────────
 export default function Services() {
   return (
     <section id="services" className="bg-[#f7f7f9] px-6 py-20 lg:px-16">
@@ -129,7 +216,6 @@ export default function Services() {
         </div>
 
         <div className="mt-16 rounded-[26px] bg-brand-gradient-wide px-8 py-10 text-white sm:px-12">
-
           {/* ── Single horizontal row: 40% left text | 60% right metrics ── */}
           <div className="flex flex-col gap-10 lg:flex-row lg:items-center lg:gap-0">
 
@@ -154,37 +240,19 @@ export default function Services() {
               </a>
             </div>
 
-            {/* Vertical divider between left text and right metrics (desktop only) */}
+            {/* Vertical divider (desktop only) */}
             <div className="hidden lg:block lg:h-36 lg:w-px lg:shrink-0 lg:bg-white/25" />
 
-            {/* Right ~60%: all 4 metrics in a single horizontal row */}
+            {/* Right ~60%: stat cards */}
             <div className="grid grid-cols-2 gap-y-8 sm:grid-cols-4 lg:flex lg:flex-1 lg:items-center lg:divide-x lg:divide-white/20">
               {STATS.map((stat, i) => (
-                <div
+                <StatCard
                   key={stat.label}
-                  className="flex flex-col items-center justify-center gap-3 px-6 text-center lg:flex-1 lg:py-2"
-                >
-                  {/* Icon circle */}
-                  <div className="flex h-14 w-14 items-center justify-center rounded-full bg-white/15">
-                    <svg
-                      width="28"
-                      height="28"
-                      viewBox="0 0 49 49"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      {STAT_ICONS[i]}
-                    </svg>
-                  </div>
-                  {/* Large number */}
-                  <p className="font-poppins text-4xl font-semibold leading-none sm:text-5xl">
-                    {stat.value}
-                  </p>
-                  {/* Label */}
-                  <p className="font-poppins text-xs font-medium leading-snug opacity-80 sm:text-sm">
-                    {stat.label}
-                  </p>
-                </div>
+                  target={stat.target}
+                  suffix={stat.suffix}
+                  label={stat.label}
+                  icon={STAT_ICONS[i]}
+                />
               ))}
             </div>
 

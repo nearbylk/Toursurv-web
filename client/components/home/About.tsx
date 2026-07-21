@@ -33,7 +33,7 @@ export default function About() {
     <section id="about" className="bg-white px-6 py-20 lg:px-16">
       <div className="mx-auto max-w-[1440px]">
         <p className="font-poppins text-2xl text-[#191919]">/ ABOUT US</p>
-        <h2 className="mt-4 max-w-5xl font-poppins text-3xl leading-[1.2] text-[#191919] sm:text-4xl lg:text-5xl">
+        <h2 className="mt-4 w-full font-poppins text-3xl leading-[1.2] text-[#191919] sm:text-4xl lg:text-5xl">
           <span className="bg-brand-gradient bg-clip-text font-semibold text-transparent">
             Toursurv
           </span>{" "}
@@ -43,7 +43,7 @@ export default function About() {
           <span className="font-semibold">software solutions.</span>
         </h2>
 
-        <div className="mt-14 flex flex-wrap items-center justify-center gap-10 sm:justify-between lg:gap-6">
+        {/* <div className="mt-14 flex flex-wrap items-center justify-center gap-10 sm:justify-between lg:gap-6">
           {TECH_ICONS.map((src, i) => (
             <img
               key={i}
@@ -52,7 +52,7 @@ export default function About() {
               className="h-16 w-auto object-contain opacity-90 sm:h-20"
             />
           ))}
-        </div>
+        </div> */}
 
         <div className="mt-16 grid grid-cols-2 gap-x-8 gap-y-8 sm:grid-cols-4">
           {PILLARS.map((p) => (
