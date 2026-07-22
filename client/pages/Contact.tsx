@@ -29,13 +29,13 @@ export default function Contact() {
       <main className="pb-64">
         {/* ── Hero ── */}
         <section className="px-6 pt-20 pb-24 text-center lg:px-16">
-          <h1 className="font-poppins text-6xl font-normal leading-none md:text-7xl lg:text-8xl">
+          <h1 className="font-poppins text-5xl leading-[1.1] text-[#242424] sm:text-6xl md:text-7xl lg:text-[90px] lg:leading-[1.1]">
             Let's{" "}
-            <span className="font-bold text-[#1C1C1C]">Build</span>{" "}
+            <span className="font-semibold text-[#1C1C1C]">Build</span>{" "}
             Your
             <br />
             Next{" "}
-            <span className="bg-brand-gradient bg-clip-text text-transparent font-bold">
+            <span className="bg-brand-gradient bg-clip-text text-transparent font-semibold">
               Big Thing
             </span>
           </h1>

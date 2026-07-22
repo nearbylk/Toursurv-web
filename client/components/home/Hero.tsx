@@ -1,3 +1,4 @@
+import ParticleBackground from '../ui/ParticleBackground';
 
 const COLLAGE = [
   {
@@ -32,8 +33,9 @@ export default function Hero() {
       id="home"
       className="relative overflow-hidden bg-gradient-to-b from-white via-white to-[#f4f4f4]"
     >
+      <ParticleBackground />
       <div className="mx-auto max-w-[1440px] px-6 pb-16 pt-32 lg:px-16 lg:pt-48">
-        <div className="mx-auto max-w-4xl text-center">
+        <div className="relative z-10 pointer-events-auto mx-auto max-w-4xl text-center">
           <h1 className="font-poppins text-5xl leading-[1.1] text-[#242424] sm:text-6xl md:text-7xl lg:text-[90px] lg:leading-[1.1]">
             We Build <span className="font-semibold">Digital</span> <br className="hidden sm:block" />
             <span className="font-semibold">Solutions</span> That <br className="hidden sm:block" />
