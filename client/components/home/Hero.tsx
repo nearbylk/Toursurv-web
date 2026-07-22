@@ -59,7 +59,7 @@ export default function Hero() {
           </a>
         </div>
 
-        <div className="relative mx-auto mt-32 grid max-w-5xl grid-cols-2 gap-4 sm:grid-cols-3 lg:mt-40 lg:grid-cols-4">
+        {/* <div className="relative mx-auto mt-32 grid max-w-5xl grid-cols-2 gap-4 sm:grid-cols-3 lg:mt-40 lg:grid-cols-4">
           {COLLAGE.map((item, i) => (
             <div
               key={i}
@@ -171,7 +171,7 @@ export default function Hero() {
             </div>
             <svg className="h-6 w-6 opacity-70" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4.75 9.54169L9.79167 4.5" stroke="white" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" /><path d="M5.29167 4.66669H9.83333V9.20835" stroke="white" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" /></svg>
           </div>
-        </div>
+        </div> */}
       </div>
       {/* Social Icons - Bottom Right */}
       <div className="absolute top-[700px] right-6 md:right-40 hidden sm:flex items-center gap-6 z-20">
@@ -218,6 +218,10 @@ export default function Hero() {
           </svg>
         </a>
       </div>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
     </section>
   );
 }
