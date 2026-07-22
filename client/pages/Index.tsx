@@ -15,8 +15,8 @@ export default function Index() {
       <main>
         <Hero />
         <About />
-        <Techstack />
         <Services />
+        <Techstack />
         <Work />
         <Clients />
         <Cta />

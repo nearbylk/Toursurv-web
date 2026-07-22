@@ -33,16 +33,16 @@ export default function Clients() {
     return (
         <section className="bg-white px-6 py-20 lg:px-16">
             <div className="mx-auto max-w-[1440px]">
-                <h2 className="font-poppins text-3xl font-semibold sm:text-4xl">
-                    <span className="font-bold">What</span>{" "}
-                    <span className="bg-brand-gradient bg-clip-text text-transparent">
-                        We Use
-                    </span>
-                </h2>
-
                 <p className="mt-6 font-poppins text-2xl text-[#2F2F2F]">
                     / TECH STACK
                 </p>
+                <h2 className="mt-4 text-left font-poppins text-3xl font-semibold sm:text-4xl lg:text-5xl">
+
+                    <span className="bg-brand-gradient bg-clip-text text-transparent">
+                        What
+                    </span>{" "}
+                    We <span className="font-semibold">Use</span>
+                </h2>
 
                 <div className="mt-10 overflow-hidden">
                     <MarqueeRow logos={ALL_LOGOS} />
