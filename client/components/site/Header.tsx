@@ -25,7 +25,15 @@ export default function Header() {
       const elem = document.getElementById(targetId);
       if (elem) {
         e.preventDefault();
-        elem.scrollIntoView({ behavior: "smooth" });
+        const headerOffset = 90; // Account for sticky navbar + breathing room
+        const elementPosition = elem.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.scrollY - headerOffset;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth"
+        });
+
         setActiveLink(href);
         setOpen(false);
       }
@@ -71,8 +79,8 @@ export default function Header() {
           {LINKS.map((link) => {
             // Determine active state: if on /contact route, only /contact is active. 
             // If on home route (/), use the activeLink state to highlight the correct scrolled section.
-            const isActive = pathname === "/contact" 
-              ? link.href === "/contact" 
+            const isActive = pathname === "/contact"
+              ? link.href === "/contact"
               : link.href === activeLink;
 
             return (
@@ -106,7 +114,7 @@ export default function Header() {
           className="hidden items-center gap-2 rounded-[9px] bg-brand-gradient px-7 py-3 font-dmsans text-lg font-semibold text-white transition-opacity hover:opacity-90 lg:inline-flex"
         >
           Get Started
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="ml-1"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="ml-1"><path d="M7 17L17 7" /><path d="M7 7h10v10" /></svg>
         </a>
 
         <button
@@ -124,8 +132,8 @@ export default function Header() {
         <div className="border-t border-black/5 bg-white lg:hidden">
           <nav className="flex flex-col gap-1 px-6 py-4">
             {LINKS.map((link) => {
-              const isActive = pathname === "/contact" 
-                ? link.href === "/contact" 
+              const isActive = pathname === "/contact"
+                ? link.href === "/contact"
                 : link.href === activeLink;
 
               return (
@@ -155,7 +163,7 @@ export default function Header() {
               className="mt-2 inline-flex items-center justify-center gap-2 rounded-[9px] bg-brand-gradient px-7 py-3 font-dmsans text-base font-semibold text-white"
             >
               Get Started
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="ml-1"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="ml-1"><path d="M7 17L17 7" /><path d="M7 7h10v10" /></svg>
             </a>
           </nav>
         </div>

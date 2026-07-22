@@ -7,19 +7,47 @@ import Work from "@/components/home/Work";
 import Clients from "@/components/home/Clients";
 import Cta from "@/components/home/Cta";
 import Techstack from "@/components/home/Techstack";
+import ScrollReveal from "@/components/ui/ScrollReveal";
 
 export default function Index() {
   return (
     <div className="min-h-screen bg-white">
       <Header />
       <main>
-        <Hero />
-        <About />
-        <Services />
-        <Techstack />
-        <Work />
-        <Clients />
-        <Cta />
+        {/* Hero: lighter reveal — it's already in view on load */}
+        <ScrollReveal distance={24} duration={0.6} threshold={0.05}>
+          <Hero />
+        </ScrollReveal>
+
+        {/* About */}
+        <ScrollReveal delay={0.05} threshold={0.1}>
+          <About />
+        </ScrollReveal>
+
+        {/* Services */}
+        <ScrollReveal delay={0.05} threshold={0.1}>
+          <Services />
+        </ScrollReveal>
+
+        {/* Tech Stack */}
+        <ScrollReveal delay={0.05} threshold={0.1}>
+          <Techstack />
+        </ScrollReveal>
+
+        {/* Work / Portfolio */}
+        <ScrollReveal delay={0.05} threshold={0.1}>
+          <Work />
+        </ScrollReveal>
+
+        {/* Clients */}
+        <ScrollReveal delay={0.05} threshold={0.1}>
+          <Clients />
+        </ScrollReveal>
+
+        {/* CTA */}
+        <ScrollReveal delay={0.05} threshold={0.1}>
+          <Cta />
+        </ScrollReveal>
       </main>
       <Footer />
     </div>

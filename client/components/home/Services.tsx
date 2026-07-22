@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import ScrollReveal from "@/components/ui/ScrollReveal";
 
 // ── Count-up hook ────────────────────────────────────────────────────────────
 function useCountUp(target: number, duration = 1800) {
@@ -206,58 +207,70 @@ export default function Services() {
         </p>
 
         <div className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {SERVICES.map((s) => (
-            <ServiceCard key={s.title} {...s} />
+          {SERVICES.map((s, i) => (
+            <ScrollReveal key={s.title} delay={i * 0.1} threshold={0.08}>
+              <ServiceCard {...s} />
+            </ScrollReveal>
           ))}
         </div>
 
         <div className="mx-auto mt-6 max-w-md">
-          <ServiceCard {...SOCIAL} />
+          <ScrollReveal delay={SERVICES.length * 0.1} threshold={0.08}>
+            <ServiceCard {...SOCIAL} />
+          </ScrollReveal>
         </div>
 
-        <div className="mt-16 rounded-[26px] bg-brand-gradient-wide px-8 py-10 text-white sm:px-12">
-          {/* ── Single horizontal row: 40% left text | 60% right metrics ── */}
-          <div className="flex flex-col gap-10 lg:flex-row lg:items-center lg:gap-0">
+        <ScrollReveal delay={0.1} threshold={0.1}>
+          <div className="mt-16 rounded-[26px] bg-brand-gradient-wide px-8 py-10 text-white sm:px-12">
+            {/* ── Single horizontal row: 40% left text | 60% right metrics ── */}
+            <div className="flex flex-col gap-10 lg:flex-row lg:items-center lg:gap-0">
 
-            {/* Left ~40%: text + button */}
-            <div className="flex flex-col justify-center lg:w-[40%] lg:shrink-0 lg:pr-12">
-              <p className="font-poppins text-sm font-semibold tracking-widest opacity-80 uppercase">
-                WHY CHOSE US
-              </p>
-              <h3 className="mt-3 font-poppins text-2xl font-semibold leading-snug sm:text-3xl lg:text-[28px]">
-                We Combine Code, Creativity &amp; Strategy To Deliver Results
-              </h3>
-              <p className="mt-3 font-poppins text-sm font-light leading-relaxed opacity-75">
-                We're not just developers or marketers — we're your growth
-                partners.
-              </p>
-              <a
-                href="#contact"
-                className="mt-7 inline-flex self-start items-center gap-2 rounded-[13px] bg-white px-6 py-2.5 font-poppins text-sm font-semibold text-[#343434] transition-opacity hover:opacity-90"
-              >
-                Let's work together
-                <svg className="h-3.5 w-3.5" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4.75 9.54169L9.79167 4.5" stroke="#343434" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round"/><path d="M5.29167 4.66669H9.83333V9.20835" stroke="#343434" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round"/></svg>
-              </a>
+              {/* Left ~40%: text + button */}
+              <div className="flex flex-col justify-center lg:w-[40%] lg:shrink-0 lg:pr-12">
+                <p className="font-poppins text-sm font-semibold tracking-widest opacity-80 uppercase">
+                  WHY CHOSE US
+                </p>
+                <h3 className="mt-3 font-poppins text-2xl font-semibold leading-snug sm:text-3xl lg:text-[28px]">
+                  We Combine Code, Creativity &amp; Strategy To Deliver Results
+                </h3>
+                <p className="mt-3 font-poppins text-sm font-light leading-relaxed opacity-75">
+                  We're not just developers or marketers — we're your growth
+                  partners.
+                </p>
+                <a
+                  href="#contact"
+                  className="mt-7 inline-flex self-start items-center gap-2 rounded-[13px] bg-white px-6 py-2.5 font-poppins text-sm font-semibold text-[#343434] transition-opacity hover:opacity-90"
+                >
+                  Let's work together
+                  <svg className="h-3.5 w-3.5" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4.75 9.54169L9.79167 4.5" stroke="#343434" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round"/><path d="M5.29167 4.66669H9.83333V9.20835" stroke="#343434" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                </a>
+              </div>
+
+              {/* Vertical divider (desktop only) */}
+              <div className="hidden lg:block lg:h-36 lg:w-px lg:shrink-0 lg:bg-white/25" />
+
+              {/* Right ~60%: stat cards — each cascades in individually */}
+              <div className="grid grid-cols-2 gap-y-8 sm:grid-cols-4 lg:flex lg:flex-1 lg:items-center lg:divide-x lg:divide-white/20">
+                {STATS.map((stat, i) => (
+                  <ScrollReveal
+                    key={stat.label}
+                    delay={0.2 + i * 0.1}
+                    threshold={0.05}
+                    distance={30}
+                  >
+                    <StatCard
+                      target={stat.target}
+                      suffix={stat.suffix}
+                      label={stat.label}
+                      icon={STAT_ICONS[i]}
+                    />
+                  </ScrollReveal>
+                ))}
+              </div>
+
             </div>
-
-            {/* Vertical divider (desktop only) */}
-            <div className="hidden lg:block lg:h-36 lg:w-px lg:shrink-0 lg:bg-white/25" />
-
-            {/* Right ~60%: stat cards */}
-            <div className="grid grid-cols-2 gap-y-8 sm:grid-cols-4 lg:flex lg:flex-1 lg:items-center lg:divide-x lg:divide-white/20">
-              {STATS.map((stat, i) => (
-                <StatCard
-                  key={stat.label}
-                  target={stat.target}
-                  suffix={stat.suffix}
-                  label={stat.label}
-                  icon={STAT_ICONS[i]}
-                />
-              ))}
-            </div>
-
           </div>
-        </div>
+        </ScrollReveal>
       </div>
     </section>
   );
