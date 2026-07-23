@@ -1,10 +1,14 @@
 const ALL_LOGOS = [
-    "/image%2044.png",
-    "/image%2045.png",
-    "/image%2046.png",
-    "/image%2047.png",
-    "/image%2048.png",
-    "/image%2049.png",
+    "/11.png",
+    "/13.png",
+    "/22.png",
+    "/33.png",
+    "/44.png",
+    "/55.png",
+    "/66.png",
+    "/77.png",
+    "/99.png",
+    "/20.png",
 ];
 
 function MarqueeRow({ logos }: { logos: string[] }) {
@@ -13,7 +17,7 @@ function MarqueeRow({ logos }: { logos: string[] }) {
             {[0, 1, 2, 3, 4].map((stripIndex) => (
                 <div
                     key={stripIndex}
-                    className="flex shrink-0 animate-marquee-right items-center justify-start gap-10 w-max pr-10"
+                    className="flex shrink-0 animate-marquee-right items-center justify-start gap-20 w-max pr-10"
                 >
                     {logos.map((src, i) => (
                         <img

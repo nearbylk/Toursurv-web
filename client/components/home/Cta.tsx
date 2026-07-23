@@ -2,7 +2,7 @@ export default function Cta() {
   return (
     <section id="contact" className="relative overflow-hidden bg-white px-6 py-20 mb-32 md:mb-48 lg:px-16">
       <div className="mx-auto max-w-[1440px]">
-        <div className="relative overflow-hidden rounded-[43px] border border-[#523FDD] bg-brand-gradient text-white min-h-[340px] flex items-center">
+        <div className="relative overflow-hidden rounded-[43px] border bg-brand-gradient text-white min-h-[340px] flex items-center">
 
           {/* ── Left graphic: absolute decoration ── */}
           <img

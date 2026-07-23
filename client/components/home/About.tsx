@@ -44,14 +44,14 @@ export default function About() {
         </h2>
 
         {/* ── PILLARS: horizontal icon + text rows ── */}
-        <div className="mt-16 grid grid-cols-2 gap-x-8 gap-y-6 sm:grid-cols-4">
+        <div className="mt-16 grid grid-cols-1 gap-10 lg:gap-12 sm:grid-cols-2 lg:grid-cols-4">
           {PILLARS.map((p) => (
             <div
               key={p.title}
-              className="flex flex-row items-center gap-3 text-left justify-start"
+              className="flex flex-col items-center justify-center text-center gap-4"
             >
-              <img src={p.icon} alt="" className="h-14 w-14 shrink-0 object-contain" />
-              <h3 className="max-w-[140px] bg-brand-gradient-v bg-clip-text font-poppins text-sm font-semibold leading-tight text-transparent md:text-base">
+              <img src={p.icon} alt="" className="h-20 w-20 shrink-0 object-contain" />
+              <h3 className="max-w-[200px] bg-brand-gradient-v bg-clip-text font-poppins text-lg font-semibold leading-tight text-transparent md:text-xl">
                 {p.title}
               </h3>
             </div>

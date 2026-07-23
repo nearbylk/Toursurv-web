@@ -3,35 +3,23 @@ import { useState } from "react";
 // Each slide has a large featured image (right) and two stacked thumbnails (left)
 const SLIDES = [
   {
-    featured:
-      "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=900&auto=format&fit=crop",
-    top: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=500&auto=format&fit=crop",
-    bottom:
-      "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=500&auto=format&fit=crop",
+    featured: "/h.png",
+    top: "/j.png",
+    bottom: "/k.png",
   },
-  {
-    featured:
-      "https://images.unsplash.com/photo-1553877522-43269d4ea984?w=900&auto=format&fit=crop",
-    top: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=500&auto=format&fit=crop",
-    bottom:
-      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=500&auto=format&fit=crop",
-  },
-  {
-    featured:
-      "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=900&auto=format&fit=crop",
-    top: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=500&auto=format&fit=crop",
-    bottom:
-      "https://images.unsplash.com/photo-1551434678-e076c223a692?w=500&auto=format&fit=crop",
-  },
-  {
-    featured:
-      "https://images.unsplash.com/photo-1497366216548-37526070297c?w=900&auto=format&fit=crop",
-    top: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=500&auto=format&fit=crop",
-    bottom:
-      "https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=500&auto=format&fit=crop",
-  },
-];
 
+  {
+    featured: "/a.png",
+    top: "/s.png",
+    bottom: "/d.png",
+  },
+  {
+    featured: "/f.png",
+    top: "/l.png",
+    bottom: "/g.png",
+  },
+
+];
 const TOTAL_DOTS = SLIDES.length;
 
 export default function Work() {
