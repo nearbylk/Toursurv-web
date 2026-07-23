@@ -1,4 +1,46 @@
+import { useState, useEffect, useRef } from "react";
+import ScrollReveal from "@/components/ui/ScrollReveal";
 
+// ── Count-up hook ────────────────────────────────────────────────────────────
+function useCountUp(target: number, duration = 1800) {
+  const [count, setCount] = useState(0);
+  const ref = useRef<HTMLDivElement | null>(null);
+  const started = useRef(false);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !started.current) {
+          started.current = true;
+          const startTime = performance.now();
+
+          const tick = (now: number) => {
+            const elapsed = now - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+            // ease-out quad
+            const eased = 1 - (1 - progress) * (1 - progress);
+            setCount(Math.floor(eased * target));
+            if (progress < 1) requestAnimationFrame(tick);
+          };
+
+          requestAnimationFrame(tick);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.3 }
+    );
+
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [target, duration]);
+
+  return { count, ref };
+}
+
+// ── Data ─────────────────────────────────────────────────────────────────────
 const SERVICES = [
   {
     icon: "https://api.builder.io/api/v1/image/assets/TEMP/448e6751651adcb3fbc74ebf776375d01f6cc1ae?width=144",
@@ -38,11 +80,12 @@ const SOCIAL = {
   desc: "Boost your online presence with engaging content and effective social media marketing.",
 };
 
-const STATS = [
-  { value: "50+", label: "Projects Completed" },
-  { value: "30+", label: "Happy Clients" },
-  { value: "7+", label: "Years of experience" },
-  { value: "98%", label: "Client Satisfaction" },
+// target number + suffix symbol
+const STATS: { target: number; suffix: string; label: string }[] = [
+  { target: 50, suffix: "+", label: "Projects Completed" },
+  { target: 30, suffix: "+", label: "Happy Clients" },
+  { target: 7,  suffix: "+", label: "Years of experience" },
+  { target: 98, suffix: "%", label: "Client Satisfaction" },
 ];
 
 const STAT_ICONS = [
@@ -71,6 +114,7 @@ const STAT_ICONS = [
   />,
 ];
 
+// ── Sub-components ────────────────────────────────────────────────────────────
 function ServiceCard({
   icon,
   title,
@@ -100,77 +144,133 @@ function ServiceCard({
   );
 }
 
+function StatCard({
+  target,
+  suffix,
+  label,
+  icon,
+}: {
+  target: number;
+  suffix: string;
+  label: string;
+  icon: React.ReactNode;
+}) {
+  const { count, ref } = useCountUp(target);
+
+  return (
+    <div
+      ref={ref}
+      className="flex flex-col items-center justify-center gap-3 px-6 text-center lg:flex-1 lg:py-2"
+    >
+      {/* Icon circle — no overflow-hidden so paths aren't clipped */}
+      <div className="flex h-14 w-14 items-center justify-center rounded-full bg-white/15">
+        <svg
+          width="36"
+          height="36"
+          viewBox="0 0 49 49"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          overflow="visible"
+        >
+          {icon}
+        </svg>
+      </div>
+      {/* Animated number */}
+      <p className="font-poppins text-4xl font-semibold leading-none sm:text-5xl">
+        {count}{suffix}
+      </p>
+      {/* Label */}
+      <p className="font-poppins text-xs font-medium leading-snug opacity-80 sm:text-sm">
+        {label}
+      </p>
+    </div>
+  );
+}
+
+// ── Main component ────────────────────────────────────────────────────────────
 export default function Services() {
   return (
     <section id="services" className="bg-[#f7f7f9] px-6 py-20 lg:px-16">
       <div className="mx-auto max-w-[1440px]">
-        <p className="text-right font-poppins text-2xl text-[#191919]">
+        <p className="text-left font-poppins text-2xl text-[#191919]">
           / SERVICES
         </p>
-        <h2 className="mt-4 text-right font-poppins text-3xl font-semibold sm:text-4xl lg:text-5xl">
+        <h2 className="mt-4 text-left font-poppins text-3xl font-semibold sm:text-4xl lg:text-5xl">
           <span className="bg-brand-gradient bg-clip-text text-transparent">
             Services
           </span>{" "}
           that <span className="font-semibold">Drive Success</span>
         </h2>
-        <p className="mt-4 text-right font-poppins text-lg font-semibold text-[#2F2F2F]">
+        <p className="mt-4 text-left font-poppins text-lg font-semibold text-[#2F2F2F]">
           End to End solutions to build your brand, engage you audience and{" "}
           <span className="font-bold">grow your business</span> online.
         </p>
 
         <div className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {SERVICES.map((s) => (
-            <ServiceCard key={s.title} {...s} />
+          {SERVICES.map((s, i) => (
+            <ScrollReveal key={s.title} delay={i * 0.1} threshold={0.08}>
+              <ServiceCard {...s} />
+            </ScrollReveal>
           ))}
         </div>
 
         <div className="mx-auto mt-6 max-w-md">
-          <ServiceCard {...SOCIAL} />
+          <ScrollReveal delay={SERVICES.length * 0.1} threshold={0.08}>
+            <ServiceCard {...SOCIAL} />
+          </ScrollReveal>
         </div>
 
-        <div className="mt-16 rounded-[26px] bg-brand-gradient-wide px-8 py-12 text-white sm:px-14">
-          <p className="font-poppins text-sm font-semibold tracking-wide">
-            WHY CHOSE US
-          </p>
-          <h3 className="mt-3 max-w-md font-poppins text-3xl font-medium leading-tight sm:text-4xl">
-            We Combine Code, Creativity & Strategy To Deliver Results
-          </h3>
-          <p className="mt-4 max-w-xs font-poppins text-sm font-light">
-            We're not just developers or marketers we're your growth
-            partners.
-          </p>
-          <a
-            href="#contact"
-            className="mt-8 inline-flex items-center gap-2 rounded-[13px] bg-white px-6 py-2.5 font-poppins text-sm font-semibold text-[#343434] transition-opacity hover:opacity-90"
-          >
-            Let's work together
-            <svg className="h-3.5 w-3.5" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4.75 9.54169L9.79167 4.5" stroke="#343434" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round"/><path d="M5.29167 4.66669H9.83333V9.20835" stroke="#343434" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round"/></svg>
-          </a>
+        <ScrollReveal delay={0.1} threshold={0.1}>
+          <div className="mt-16 rounded-[26px] bg-brand-gradient-wide px-8 py-10 text-white sm:px-12">
+            {/* ── Single horizontal row: 40% left text | 60% right metrics ── */}
+            <div className="flex flex-col gap-10 lg:flex-row lg:items-center lg:gap-0">
 
-          <div className="mt-12 grid grid-cols-2 gap-x-6 gap-y-10 border-t border-white/30 pt-10 sm:grid-cols-4">
-            {STATS.map((stat, i) => (
-              <div key={stat.label} className="text-center">
-                <div className="mx-auto mb-3 flex h-14 w-14 items-center justify-center rounded-full bg-white/15">
-                  <svg
-                    width="28"
-                    height="28"
-                    viewBox="0 0 49 49"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    {STAT_ICONS[i]}
-                  </svg>
-                </div>
-                <p className="font-poppins text-4xl font-medium sm:text-5xl">
-                  {stat.value}
+              {/* Left ~40%: text + button */}
+              <div className="flex flex-col items-center justify-center text-center lg:items-start lg:text-left lg:w-[40%] lg:shrink-0 lg:pr-12">
+                <p className="font-poppins text-sm font-semibold tracking-widest opacity-80 uppercase">
+                  WHY CHOSE US
                 </p>
-                <p className="mt-1 font-poppins text-sm font-medium">
-                  {stat.label}
+                <h3 className="mt-3 font-poppins text-2xl font-semibold leading-snug sm:text-3xl lg:text-[28px]">
+                  We Combine Code, Creativity &amp; Strategy To Deliver Results
+                </h3>
+                <p className="mt-3 font-poppins text-sm font-light leading-relaxed opacity-75">
+                  We're not just developers or marketers — we're your growth
+                  partners.
                 </p>
+                <a
+                  href="#contact"
+                  className="mt-7 inline-flex items-center gap-2 rounded-[13px] bg-white px-6 py-2.5 font-poppins text-sm font-semibold text-[#343434] transition-opacity hover:opacity-90"
+                >
+                  Let's work together
+                  <svg className="h-3.5 w-3.5" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4.75 9.54169L9.79167 4.5" stroke="#343434" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round"/><path d="M5.29167 4.66669H9.83333V9.20835" stroke="#343434" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                </a>
               </div>
-            ))}
+
+              {/* Vertical divider (desktop only) */}
+              <div className="hidden lg:block lg:h-36 lg:w-px lg:shrink-0 lg:bg-white/25" />
+
+              {/* Right ~60%: stat cards — each cascades in individually */}
+              <div className="grid grid-cols-2 gap-y-8 sm:grid-cols-4 lg:flex lg:flex-1 lg:items-center lg:divide-x lg:divide-white/20">
+                {STATS.map((stat, i) => (
+                  <ScrollReveal
+                    key={stat.label}
+                    delay={0.2 + i * 0.1}
+                    threshold={0.05}
+                    distance={30}
+                  >
+                    <StatCard
+                      target={stat.target}
+                      suffix={stat.suffix}
+                      label={stat.label}
+                      icon={STAT_ICONS[i]}
+                    />
+                  </ScrollReveal>
+                ))}
+              </div>
+
+            </div>
           </div>
-        </div>
+        </ScrollReveal>
       </div>
     </section>
   );
