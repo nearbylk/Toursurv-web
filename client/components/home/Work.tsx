@@ -43,7 +43,7 @@ export default function Work() {
       <div className="mx-auto max-w-[1440px]">
 
         {/* ── Section header ── */}
-        <p className="text-right font-poppins text-2xl text-[#191919] lg:text-left">
+        <p className="text-left font-poppins text-2xl text-[#191919]">
           / OUR WORK
         </p>
 

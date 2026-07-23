@@ -226,7 +226,7 @@ export default function Services() {
             <div className="flex flex-col gap-10 lg:flex-row lg:items-center lg:gap-0">
 
               {/* Left ~40%: text + button */}
-              <div className="flex flex-col justify-center lg:w-[40%] lg:shrink-0 lg:pr-12">
+              <div className="flex flex-col items-center justify-center text-center lg:items-start lg:text-left lg:w-[40%] lg:shrink-0 lg:pr-12">
                 <p className="font-poppins text-sm font-semibold tracking-widest opacity-80 uppercase">
                   WHY CHOSE US
                 </p>
@@ -239,7 +239,7 @@ export default function Services() {
                 </p>
                 <a
                   href="#contact"
-                  className="mt-7 inline-flex self-start items-center gap-2 rounded-[13px] bg-white px-6 py-2.5 font-poppins text-sm font-semibold text-[#343434] transition-opacity hover:opacity-90"
+                  className="mt-7 inline-flex items-center gap-2 rounded-[13px] bg-white px-6 py-2.5 font-poppins text-sm font-semibold text-[#343434] transition-opacity hover:opacity-90"
                 >
                   Let's work together
                   <svg className="h-3.5 w-3.5" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4.75 9.54169L9.79167 4.5" stroke="#343434" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round"/><path d="M5.29167 4.66669H9.83333V9.20835" stroke="#343434" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round"/></svg>

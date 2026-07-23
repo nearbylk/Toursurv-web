@@ -23,14 +23,14 @@ export default function Footer() {
         <div className="mx-auto max-w-[1440px]">
 
           {/* ── "Join us today…" headline row ── */}
-          <div className="relative -top-14 z-8 mb-8 flex flex-col items-start justify-between gap-6 md:flex-row md:items-center">
+          <div className="relative top-0 md:-top-14 z-8 mb-8 flex flex-col items-start justify-between gap-6 md:flex-row md:items-center">
             {/* Left spacer / brand tagline */}
             <p className="max-w-xs font-outfit text-sm font-light text-white/50">
 
             </p>
 
             {/* Large headline on the right */}
-            <h2 className="font-poppins text-3xl font-semibold leading-tight sm:text-4xl lg:text-5xl">
+            <h2 className="self-end text-right font-poppins text-2xl font-semibold leading-tight md:text-4xl lg:text-5xl">
               <span className="text-[#20D3FE]">Join us</span>{" "}
               <span className="font-normal text-white/70">today and</span>{" "}
               <span className="font-bold text-white">get started!</span>
