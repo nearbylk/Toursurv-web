@@ -60,6 +60,7 @@ export default function Footer() {
                 <li className="transition-colors hover:text-white">Mobile App Development</li>
                 <li className="transition-colors hover:text-white">Web App Development</li>
                 <li className="transition-colors hover:text-white">IoT Solutions</li>
+                <li className="transition-colors hover:text-white">Social Media Marketing</li>
               </ul>
             </div>
 
@@ -100,7 +101,7 @@ export default function Footer() {
                   <a href="#services" className="transition-colors hover:text-white">Our Products</a>
                 </li>
                 <li>
-                  <a href="#about" className="transition-colors hover:text-white">Team Member</a>
+                  <a href="#about" className="transition-colors hover:text-white">About Us</a>
                 </li>
                 <li>
                   <a href="#contact" className="transition-colors hover:text-white">Contact Us</a>

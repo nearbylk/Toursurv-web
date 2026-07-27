@@ -13,8 +13,8 @@ export default function Cta() {
 
           {/* ── Content: pushed to right half on desktop ── */}
           <div className="relative z-10 w-full max-w-3xl mx-auto md:mx-0 md:ml-auto md:mr-12 lg:mr-32 flex flex-col items-center text-center px-10 py-14">
-            <span className="font-poppins text-3xl font-bold text-black">
-              Contact with Us
+            <span className="font-poppins text-3xl font-bold text-white">
+              Connect With Us
             </span>
             <h2 className="mt-5 font-poppins text-3xl font-bold leading-tight sm:text-4xl">
               Ready to Grow Your Business
