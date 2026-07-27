@@ -58,7 +58,7 @@ export default function Header() {
         }`}
     >
       <div className="mx-auto flex max-w-[1440px] items-center justify-between gap-4 px-6 py-4 lg:px-16">
-        {/* අලුත් Logo Styling එක */}
+        {/* Logo Styling */}
         <a
           href="/"
           className="shrink-0"
@@ -71,7 +71,7 @@ export default function Header() {
           <img
             src="https://api.builder.io/api/v1/image/assets/TEMP/576771355e375099b1ec817091b96f428dc5727c?width=508"
             alt="Logo"
-            className="h-[42px] w-auto lg:h-[58px]"
+            className="h-auto w-30 lg:w-40"
           />
         </a>
 

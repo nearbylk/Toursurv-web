@@ -106,9 +106,7 @@ const STAT_ICONS = [
   />,
   <path
     key="heart"
-    fillRule="evenodd"
-    clipRule="evenodd"
-    d="M16.5499 37.2542C10.8169 32.836 4.0835 27.6481 4.0835 18.6546C4.0835 8.72597 15.3127 1.68426 24.5002 11.2311V41.8541C22.4585 41.8541 20.4168 40.282 18.2976 38.6078C17.73 38.1641 17.1474 37.7129 16.5499 37.2542Z"
+    d="M 24.5 43.2 L 21.6 40.56 C 11.3 31.22 4.5 25.06 4.5 17.5 C 4.5 11.34 9.34 6.5 15.5 6.5 C 18.98 6.5 22.32 8.12 24.5 10.68 C 26.68 8.12 30.02 6.5 33.5 6.5 C 39.66 6.5 44.5 11.34 44.5 17.5 C 44.5 25.06 37.7 31.22 27.4 40.56 Z"
     fill="white"
     opacity={0.5}
   />,
@@ -125,12 +123,12 @@ function ServiceCard({
   desc: string;
 }) {
   return (
-    <div className="flex flex-col items-center rounded-3xl border border-black/5 bg-white p-8 text-center shadow-sm transition-shadow hover:shadow-xl">
+    <div className="flex h-full flex-col items-center rounded-3xl border border-black/5 bg-white p-8 text-center shadow-sm transition-shadow hover:shadow-xl">
       <img src={icon} alt="" className="h-16 w-16 object-contain" />
       <h3 className="mt-5 font-poppins text-xl font-semibold text-[#191919]">
         {title}
       </h3>
-      <p className="mt-3 font-poppins text-base font-medium text-[#2F2F2F]">
+      <p className="mt-3 flex-grow font-poppins text-base font-medium text-[#2F2F2F]">
         {desc}
       </p>
       <a
