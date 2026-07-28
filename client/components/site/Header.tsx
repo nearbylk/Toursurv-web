@@ -54,7 +54,7 @@ export default function Header() {
 
   return (
     <header
-      className={`sticky top-0 z-50 w-full bg-white/90 backdrop-blur transition-shadow ${scrolled ? "shadow-sm" : ""
+      className={`fixed top-0 left-0 w-full z-50 bg-white/90 backdrop-blur transition-shadow ${scrolled ? "shadow-sm" : ""
         }`}
     >
       <div className="mx-auto flex max-w-[1440px] items-center justify-between gap-4 px-6 py-4 lg:px-16">
@@ -69,9 +69,9 @@ export default function Header() {
           }}
         >
           <img
-            src="https://api.builder.io/api/v1/image/assets/TEMP/576771355e375099b1ec817091b96f428dc5727c?width=508"
+            src="https://res.cloudinary.com/hvq7yafc/image/upload/v1785150752/grablack_dv6trc.png"
             alt="Logo"
-            className="h-auto w-30 lg:w-40"
+            className="h-auto w-28 lg:w-40"
           />
         </a>
 

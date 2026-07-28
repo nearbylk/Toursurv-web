@@ -2,17 +2,28 @@ export default function Footer() {
   return (
     <footer className="relative bg-[#0f0f14] text-white">
 
-      {/* ── Asymmetric step-curve divider: absolutely above the footer edge ── */}
+      {/* ── Top divider: asymmetric left-dip on mobile, step-curve on desktop ── */}
       <div className="absolute left-0 right-0 bottom-full w-full overflow-hidden leading-none">
+        <svg
+          viewBox="0 0 1440 80"
+          preserveAspectRatio="none"
+          className="relative block w-full h-[60px] md:hidden"
+        >
+          {/* Mobile: curved dip on left only, straight across on right */}
+          <path
+            fill="#0f0f14"
+            d="M0,120 L0,40 L600,40 C650,40 700,0 750,0 L3000,0 L3000,120 Z"
+          />
+        </svg>
         <svg
           viewBox="0 0 1440 120"
           preserveAspectRatio="none"
-          className="relative block w-full h-[50px] md:h-[120px]"
+          className="relative hidden md:block w-full h-[120px]"
         >
+          {/* Desktop: asymmetric step-curve */}
           <path
             fill="#0f0f14"
             d="M0,120 L0,80 L600,80 C650,80 700,0 750,0 L1440,0 L1440,120 Z"
-
           />
         </svg>
       </div>
@@ -30,10 +41,13 @@ export default function Footer() {
             </p>
 
             {/* Large headline on the right */}
-            <h2 className="self-end text-right font-poppins text-2xl font-semibold leading-tight md:text-4xl lg:text-5xl">
+            <h2 className="self-end text-right font-poppins text-3xl -translate-x-[2px] -mt-[4px] -translate-y-[4px] font-semibold leading-tight md:text-4xl md:translate-x-0 md:mt-0 md:translate-y-0 lg:text-5xl">
               <span className="text-[#20D3FE]">Join us</span>{" "}
-              <span className="font-normal text-white/70">today and</span>{" "}
-              <span className="font-bold text-white">get started!</span>
+              <span className="font-normal text-white/70">today</span>
+              <span className="hidden md:inline">
+                {" "}<span className="font-normal text-white/70">and</span>{" "}
+                <span className="font-bold text-white">get started!</span>
+              </span>
             </h2>
           </div>
 
@@ -114,11 +128,11 @@ export default function Footer() {
           {/* ── Horizontal divider ── */}
           <hr className="my-6 border-white/10" />
 
-          {/* ── Bottom bar: logo left | copyright right ── */}
-          <div className="flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-center">
+          {/* ── Bottom bar: centered on mobile | logo left + copyright right on desktop ── */}
+          <div className="flex flex-col items-center justify-center gap-4 text-center sm:flex-row sm:items-center sm:justify-between sm:text-left">
             {/* Logo */}
             <img
-              src="/grawhite.png"
+              src="https://res.cloudinary.com/hvq7yafc/image/upload/v1785150752/grawhite_jczbkd.png"
               alt="Toursurv Logo"
               className="h-12 w-auto"
             />

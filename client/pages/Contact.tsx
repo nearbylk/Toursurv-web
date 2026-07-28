@@ -54,7 +54,7 @@ export default function Contact() {
     <div className="min-h-screen bg-white">
       <Header />
 
-      <main className="pb-64">
+      <main className="pb-64 pt-20 md:pt-24">
         <ScrollReveal distance={48}>
           {/* ── Hero ── */}
           <section className="px-6 pt-20 pb-24 text-center lg:px-16">

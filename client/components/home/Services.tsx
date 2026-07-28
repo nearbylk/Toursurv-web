@@ -190,7 +190,7 @@ export default function Services() {
   return (
     <section id="services" className="bg-[#f7f7f9] px-6 py-20 lg:px-16">
       <div className="mx-auto max-w-[1440px]">
-        <p className="text-left font-poppins text-2xl text-[#191919]">
+        <p className="text-left font-poppins text-lg md:text-2xl text-[#191919]">
           / SERVICES
         </p>
         <h2 className="mt-4 text-left font-poppins text-3xl font-semibold sm:text-4xl lg:text-5xl">
