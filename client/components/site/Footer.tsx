@@ -34,32 +34,33 @@ export default function Footer() {
         <div className="mx-auto max-w-[1440px]">
 
           {/* ── "Join us today…" headline row ── */}
-          <div className="relative top-0 md:-top-14 z-8 mb-8 flex flex-col items-start justify-between gap-6 md:flex-row md:items-center">
+          <div className="relative top-0 md:-top-14 z-8 mb-8 flex flex-col items-center justify-between gap-6 w-full md:flex-row md:items-center">
             {/* Left spacer / brand tagline */}
             <p className="max-w-xs font-outfit text-sm font-light text-white/50">
 
             </p>
 
             {/* Large headline on the right */}
-            <h2 className="self-end text-right font-poppins text-3xl -translate-x-[2px] -mt-[4px] -translate-y-[4px] font-semibold leading-tight md:text-4xl md:translate-x-0 md:mt-0 md:translate-y-0 lg:text-4xl">
+            <h2 className="w-full text-center md:text-right font-poppins text-xl md:text-4xl font-semibold leading-tight">
               <span className="text-[#20D3FE]">Your success story </span>{" "}
               <span className="font-normal text-white/70">begins here.</span>
-
             </h2>
           </div>
 
           {/* ── 4-column links grid ── */}
-          <div className="grid grid-cols-2 gap-x-8 gap-y-10 sm:grid-cols-4">
+          <div className="grid grid-cols-1 gap-x-8 gap-y-10 text-center md:grid-cols-4 md:text-left">
 
             {/* Col 1: Company */}
             <div>
               <h4 className="font-outfit text-xs font-bold uppercase tracking-widest text-white/50">
                 Toursurv (Pvt) Ltd
               </h4>
-              <ul className="mt-5 space-y-3 font-outfit text-sm font-light text-white/70">
-                <li>Innovation isn't what we do; it's how we think.</li>
-                <li>A premier technology firm dedicated to designing dynamic, custom software ecosystems and robust, highly secure cloud infrastructure. </li>
-              </ul>
+              <p className="mt-5 font-outfit text-sm font-light leading-relaxed text-white/70">
+                Innovation isn't what we do; it's how we think.
+              </p>
+              <p className="mt-5 font-outfit text-sm font-light leading-relaxed text-white/70">
+                A premier technology firm dedicated to designing dynamic, custom software ecosystems and robust, highly secure cloud infrastructure.
+              </p>
             </div>
 
             {/* Col 2: Services */}
@@ -67,12 +68,28 @@ export default function Footer() {
               <h4 className="font-outfit text-xs font-bold uppercase tracking-widest text-white/50">
                 Services
               </h4>
+
+
+
+
+
+
+
+
+
+
+
+
               <ul className="mt-5 space-y-3 font-outfit text-sm font-light text-white/70">
-                <li className="transition-colors hover:text-white">Website Development</li>
+                <li className="transition-colors hover:text-white">Web Development</li>
+                <li className="transition-colors hover:text-white">Software Development</li>
+                <li className="transition-colors hover:text-white">AI Solutions</li>
                 <li className="transition-colors hover:text-white">Mobile App Development</li>
-                <li className="transition-colors hover:text-white">Web App Development</li>
+                <li className="transition-colors hover:text-white">POS & Cashier Systems</li>
                 <li className="transition-colors hover:text-white">IoT Solutions</li>
                 <li className="transition-colors hover:text-white">Social Media Marketing</li>
+                <li className="transition-colors hover:text-white">Cloud Infrastructure Solutions</li>
+                <li className="transition-colors hover:text-white">Event Management</li>
               </ul>
             </div>
 
@@ -81,23 +98,29 @@ export default function Footer() {
               <h4 className="font-outfit text-xs font-bold uppercase tracking-widest text-white/50">
                 Contact
               </h4>
-              <ul className="mt-5 space-y-3 font-outfit text-sm font-light text-white/70">
-                <li>
-                  <a href="mailto:toursurv@gmail.com" className="transition-colors hover:text-white">
-                    toursurv@gmail.com
-                  </a>
-                </li>
-                <li>
-                  <a href="tel:0112755050" className="transition-colors hover:text-white">
-                    0112-755050
-                  </a>
-                </li>
-                <li>
-                  <a href="tel:07111108108" className="transition-colors hover:text-white">
-                    071-11108108
-                  </a>
-                </li>
-              </ul>
+              <div className="mt-5 space-y-4 font-outfit text-sm font-light text-white/70">
+
+                {/* Sri Lanka Office */}
+                <div>
+                  <p className="mb-1 font-semibold text-white/90">Sri Lanka Office</p>
+                  <p>General: <a href="tel:+94112755050" className="transition-colors hover:text-white">+94 112 75 50 50</a></p>
+                  <p>Hotline: <a href="tel:+94711108108" className="transition-colors hover:text-white">+94 711 108 108</a></p>
+                  <p className="mt-1 leading-snug">359/19, 06th Lane, Maya Mawatha,<br />Makumbura, Pannipitiya, Sri Lanka</p>
+                  <p className="mt-1">
+                    <a href="mailto:toursurvs@gmail.com" className="transition-colors hover:text-white">
+                      toursurvs@gmail.com
+                    </a>
+                  </p>
+                </div>
+
+                {/* Bangladesh Office */}
+                <div>
+                  <p className="mb-1 font-semibold text-white/90">Bangladesh Office</p>
+                  <p>Telephone: <a href="tel:+8801844646633" className="transition-colors hover:text-white">+88 01844-646633</a></p>
+                  <p className="mt-1 leading-snug">357/10A - Modhubag, Moghbazar,<br />Dhaka, Bangladesh – 1217</p>
+                </div>
+
+              </div>
             </div>
 
             {/* Col 4: Quick Links */}
