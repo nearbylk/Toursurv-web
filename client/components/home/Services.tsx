@@ -84,7 +84,7 @@ const SOCIAL = {
 const STATS: { target: number; suffix: string; label: string }[] = [
   { target: 50, suffix: "+", label: "Projects Completed" },
   { target: 30, suffix: "+", label: "Happy Clients" },
-  { target: 7,  suffix: "+", label: "Years of experience" },
+  { target: 7, suffix: "+", label: "Years of experience" },
   { target: 98, suffix: "%", label: "Client Satisfaction" },
 ];
 
@@ -136,7 +136,7 @@ function ServiceCard({
         className="mt-6 inline-flex items-center gap-1.5 rounded-[9px] bg-brand-gradient-wide px-5 py-1.5 font-poppins text-sm font-semibold text-white transition-opacity hover:opacity-90"
       >
         Learn More
-        <svg className="h-3 w-3" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4.75 9.54169L9.79167 4.5" stroke="white" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round"/><path d="M5.29167 4.66669H9.83333V9.20835" stroke="white" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round"/></svg>
+        <svg className="h-3 w-3" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4.75 9.54169L9.79167 4.5" stroke="white" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" /><path d="M5.29167 4.66669H9.83333V9.20835" stroke="white" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" /></svg>
       </a>
     </div>
   );
@@ -195,13 +195,13 @@ export default function Services() {
         </p>
         <h2 className="mt-4 text-left font-poppins text-3xl font-semibold sm:text-4xl lg:text-5xl">
           <span className="bg-brand-gradient bg-clip-text text-transparent">
-            Services
+            Solutions
           </span>{" "}
-          that <span className="font-semibold">Drive Success</span>
+          that <span className="font-semibold">Lead to Success</span>
         </h2>
-        <p className="mt-4 text-left font-poppins text-lg font-semibold text-[#2F2F2F]">
-          End to End solutions to build your brand, engage you audience and{" "}
-          <span className="font-bold">grow your business</span> online.
+        <p className="mt-3 font-poppins text-base text-[#5A5A5A]">
+          Simplified solutions with unmatched support to {" "}
+          <span className="font-semibold text-[#1C1C1C]">build your business to the next level.</span>
         </p>
 
         <div className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -240,7 +240,7 @@ export default function Services() {
                   className="mt-7 inline-flex items-center gap-2 rounded-[13px] bg-white px-6 py-2.5 font-poppins text-sm font-semibold text-[#343434] transition-opacity hover:opacity-90"
                 >
                   Let's work together
-                  <svg className="h-3.5 w-3.5" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4.75 9.54169L9.79167 4.5" stroke="#343434" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round"/><path d="M5.29167 4.66669H9.83333V9.20835" stroke="#343434" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                  <svg className="h-3.5 w-3.5" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4.75 9.54169L9.79167 4.5" stroke="#343434" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" /><path d="M5.29167 4.66669H9.83333V9.20835" stroke="#343434" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" /></svg>
                 </a>
               </div>
 

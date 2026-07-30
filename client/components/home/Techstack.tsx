@@ -43,10 +43,16 @@ export default function Clients() {
                 <h2 className="mt-4 text-left font-poppins text-3xl font-semibold sm:text-4xl lg:text-5xl">
 
                     <span className="bg-brand-gradient bg-clip-text text-transparent">
-                        What
+                        Latest
                     </span>{" "}
-                    We <span className="font-semibold">Use</span>
+                    Tools and Techniques
                 </h2>
+                <p className="mt-3 font-poppins text-base text-[#5A5A5A]">
+                    Systems that run simple businesses, end-to-end tasks for the operations and data reconciliations. Combining  {" "}
+                    <span className="font-semibold text-[#1C1C1C]">AI, machine learning, and robotic process automation </span>,
+                    build smart, self-running{" "}
+                    <span className="font-semibold text-[#1C1C1C]"> business workflows.</span>
+                </p>
 
                 <div className="mt-10 overflow-hidden">
                     <MarqueeRow logos={ALL_LOGOS} />

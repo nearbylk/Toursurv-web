@@ -46,10 +46,17 @@ export default function Clients() {
         <br></br>
         <h2 className="mt-4 text-left font-poppins text-3xl font-semibold sm:text-4xl lg:text-5xl">
           <span className="bg-brand-gradient bg-clip-text text-transparent">
-            Who
+            Clients and Partners,
           </span>{" "}
-          <span className="font-semibold">We've Helped</span>
+          <span className="font-semibold"> we built our trust.</span>
         </h2>
+
+        <p className="mt-3 font-poppins text-base text-[#5A5A5A]">
+          Building  {" "}
+          <span className="font-semibold text-[#1C1C1C]">strong trust</span>,
+          with clients and partners takes clear communication, doing what you promise, and showing true care. {" "}
+
+        </p>
 
         <div className="mt-12 flex flex-col gap-12">
           <MarqueeRow logos={LOGOS_TOP} />

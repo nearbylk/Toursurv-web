@@ -36,13 +36,22 @@ export default function About() {
       <div className="mx-auto max-w-[1440px]">
         <p className="font-poppins text-lg md:text-2xl text-[#191919]">/ ABOUT US</p>
         <h2 className="mt-4 w-full font-poppins text-3xl leading-[1.2] text-[#191919] sm:text-4xl lg:text-5xl">
+
+          Dedicated to enriching businesses through smart, people-focused{" "}
           <span className="bg-brand-gradient bg-clip-text font-semibold text-transparent">
-            Toursurv
+            software solutions
           </span>{" "}
-          is a growing tech company dedicated to{" "}
-          <span className="font-semibold">simplifying</span> businesses
-          through smart, people-focused{" "}
-          <span className="font-semibold">software solutions.</span>
+          since
+          <span className="font-semibold"> 2017.</span>
+          <br />
+          <br />
+          A decade in Business with Technological Experience, Provide the Total Solution
+          <span className="font-semibold"> Research and Development, Hosting, and Infrastructure </span>
+          with support including
+          <span className="font-semibold"> Backup and Security</span>
+          <br />
+          <br />
+
         </h2>
 
         {/* ── PILLARS: horizontal icon + text rows ── */}

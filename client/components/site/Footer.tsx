@@ -41,13 +41,10 @@ export default function Footer() {
             </p>
 
             {/* Large headline on the right */}
-            <h2 className="self-end text-right font-poppins text-3xl -translate-x-[2px] -mt-[4px] -translate-y-[4px] font-semibold leading-tight md:text-4xl md:translate-x-0 md:mt-0 md:translate-y-0 lg:text-5xl">
-              <span className="text-[#20D3FE]">Join us</span>{" "}
-              <span className="font-normal text-white/70">today</span>
-              <span className="hidden md:inline">
-                {" "}<span className="font-normal text-white/70">and</span>{" "}
-                <span className="font-bold text-white">get started!</span>
-              </span>
+            <h2 className="self-end text-right font-poppins text-3xl -translate-x-[2px] -mt-[4px] -translate-y-[4px] font-semibold leading-tight md:text-4xl md:translate-x-0 md:mt-0 md:translate-y-0 lg:text-4xl">
+              <span className="text-[#20D3FE]">Your success story </span>{" "}
+              <span className="font-normal text-white/70">begins here.</span>
+
             </h2>
           </div>
 
@@ -60,7 +57,8 @@ export default function Footer() {
                 Toursurv (Pvt) Ltd
               </h4>
               <ul className="mt-5 space-y-3 font-outfit text-sm font-light text-white/70">
-                <li>Innovative software solutions providing organization operating across Sri Lanka, Bangladesh, and USA.</li>
+                <li>Innovation isn't what we do; it's how we think.</li>
+                <li>A premier technology firm dedicated to designing dynamic, custom software ecosystems and robust, highly secure cloud infrastructure. </li>
               </ul>
             </div>
 
