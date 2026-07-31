@@ -72,13 +72,22 @@ const SERVICES = [
     title: "IoT Solutions",
     desc: "We connect devices and data to unlock smarter, automated business solutions.",
   },
+  {
+    icon: "https://api.builder.io/api/v1/image/assets/TEMP/51fe540eeb76d744e38322ed8b5f8b9d439ad812?width=176",
+    title: "Social Media Marketing",
+    desc: "Boost your online presence with engaging content and effective social media marketing.",
+  },
+  {
+    icon: "https://res.cloudinary.com/hvq7yafc/image/upload/v1785396478/server_sraw7t.png",
+    title: "Cloud Infrastructure Solutions",
+    desc: "We provide scalable, secure, and robust cloud hosting and infrastructure solutions to keep your business running smoothly.",
+  },
+  {
+    icon: "https://res.cloudinary.com/hvq7yafc/image/upload/v1785396478/events_ni5jqn.png",
+    title: "Event Management",
+    desc: "We plan, organize, and execute professional tech events, webinars, and corporate gatherings with seamless precision.",
+  },
 ];
-
-const SOCIAL = {
-  icon: "https://api.builder.io/api/v1/image/assets/TEMP/51fe540eeb76d744e38322ed8b5f8b9d439ad812?width=176",
-  title: "Social Media Marketing",
-  desc: "Boost your online presence with engaging content and effective social media marketing.",
-};
 
 // target number + suffix symbol
 const STATS: { target: number; suffix: string; label: string }[] = [
@@ -210,12 +219,6 @@ export default function Services() {
               <ServiceCard {...s} />
             </ScrollReveal>
           ))}
-        </div>
-
-        <div className="mx-auto mt-6 max-w-md">
-          <ScrollReveal delay={SERVICES.length * 0.1} threshold={0.08}>
-            <ServiceCard {...SOCIAL} />
-          </ScrollReveal>
         </div>
 
         <ScrollReveal delay={0.1} threshold={0.1}>

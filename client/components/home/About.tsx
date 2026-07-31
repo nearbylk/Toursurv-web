@@ -58,7 +58,7 @@ export default function About() {
         <div className="mt-16 grid grid-cols-1 gap-10 lg:gap-12 sm:grid-cols-2 lg:grid-cols-4">
           {PILLARS.map((p, i) => (
             <ScrollReveal key={p.title} delay={(i + 1) * 0.1} threshold={0.1}>
-              <div className="flex flex-col items-center justify-center text-center gap-4">
+              <div className="flex flex-col items-center justify-center text-center gap-4 transition-transform duration-300 ease-in-out hover:scale-105 hover:cursor-pointer">
                 <img src={p.icon} alt="" className="h-20 w-20 shrink-0 object-contain" />
                 <h3 className="max-w-[200px] bg-brand-gradient-v bg-clip-text font-poppins text-lg font-semibold leading-tight text-transparent md:text-xl">
                   {p.title}
