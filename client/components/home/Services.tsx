@@ -72,19 +72,28 @@ const SERVICES = [
     title: "IoT Solutions",
     desc: "We connect devices and data to unlock smarter, automated business solutions.",
   },
+  {
+    icon: "https://api.builder.io/api/v1/image/assets/TEMP/51fe540eeb76d744e38322ed8b5f8b9d439ad812?width=176",
+    title: "Social Media Marketing",
+    desc: "Boost your online presence with engaging content and effective social media marketing.",
+  },
+  {
+    icon: "https://res.cloudinary.com/hvq7yafc/image/upload/v1785396478/server_sraw7t.png",
+    title: "Cloud Infrastructure Solutions",
+    desc: "We provide scalable, secure, and robust cloud hosting and infrastructure solutions to keep your business running smoothly.",
+  },
+  {
+    icon: "https://res.cloudinary.com/hvq7yafc/image/upload/v1785396478/events_ni5jqn.png",
+    title: "Event Management",
+    desc: "We plan, organize, and execute professional tech events, webinars, and corporate gatherings with seamless precision.",
+  },
 ];
-
-const SOCIAL = {
-  icon: "https://api.builder.io/api/v1/image/assets/TEMP/51fe540eeb76d744e38322ed8b5f8b9d439ad812?width=176",
-  title: "Social Media Marketing",
-  desc: "Boost your online presence with engaging content and effective social media marketing.",
-};
 
 // target number + suffix symbol
 const STATS: { target: number; suffix: string; label: string }[] = [
   { target: 50, suffix: "+", label: "Projects Completed" },
   { target: 30, suffix: "+", label: "Happy Clients" },
-  { target: 7,  suffix: "+", label: "Years of experience" },
+  { target: 7, suffix: "+", label: "Years of experience" },
   { target: 98, suffix: "%", label: "Client Satisfaction" },
 ];
 
@@ -106,9 +115,7 @@ const STAT_ICONS = [
   />,
   <path
     key="heart"
-    fillRule="evenodd"
-    clipRule="evenodd"
-    d="M16.5499 37.2542C10.8169 32.836 4.0835 27.6481 4.0835 18.6546C4.0835 8.72597 15.3127 1.68426 24.5002 11.2311V41.8541C22.4585 41.8541 20.4168 40.282 18.2976 38.6078C17.73 38.1641 17.1474 37.7129 16.5499 37.2542Z"
+    d="M 24.5 43.2 L 21.6 40.56 C 11.3 31.22 4.5 25.06 4.5 17.5 C 4.5 11.34 9.34 6.5 15.5 6.5 C 18.98 6.5 22.32 8.12 24.5 10.68 C 26.68 8.12 30.02 6.5 33.5 6.5 C 39.66 6.5 44.5 11.34 44.5 17.5 C 44.5 25.06 37.7 31.22 27.4 40.56 Z"
     fill="white"
     opacity={0.5}
   />,
@@ -125,12 +132,12 @@ function ServiceCard({
   desc: string;
 }) {
   return (
-    <div className="flex flex-col items-center rounded-3xl border border-black/5 bg-white p-8 text-center shadow-sm transition-shadow hover:shadow-xl">
+    <div className="flex h-full flex-col items-center rounded-3xl border border-black/5 bg-white p-8 text-center shadow-sm transition-shadow hover:shadow-xl">
       <img src={icon} alt="" className="h-16 w-16 object-contain" />
       <h3 className="mt-5 font-poppins text-xl font-semibold text-[#191919]">
         {title}
       </h3>
-      <p className="mt-3 font-poppins text-base font-medium text-[#2F2F2F]">
+      <p className="mt-3 flex-grow font-poppins text-base font-medium text-[#2F2F2F]">
         {desc}
       </p>
       <a
@@ -138,7 +145,7 @@ function ServiceCard({
         className="mt-6 inline-flex items-center gap-1.5 rounded-[9px] bg-brand-gradient-wide px-5 py-1.5 font-poppins text-sm font-semibold text-white transition-opacity hover:opacity-90"
       >
         Learn More
-        <svg className="h-3 w-3" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4.75 9.54169L9.79167 4.5" stroke="white" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round"/><path d="M5.29167 4.66669H9.83333V9.20835" stroke="white" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round"/></svg>
+        <svg className="h-3 w-3" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4.75 9.54169L9.79167 4.5" stroke="white" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" /><path d="M5.29167 4.66669H9.83333V9.20835" stroke="white" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" /></svg>
       </a>
     </div>
   );
@@ -192,18 +199,18 @@ export default function Services() {
   return (
     <section id="services" className="bg-[#f7f7f9] px-6 py-20 lg:px-16">
       <div className="mx-auto max-w-[1440px]">
-        <p className="text-left font-poppins text-2xl text-[#191919]">
+        <p className="text-left font-poppins text-lg md:text-2xl text-[#191919]">
           / SERVICES
         </p>
         <h2 className="mt-4 text-left font-poppins text-3xl font-semibold sm:text-4xl lg:text-5xl">
           <span className="bg-brand-gradient bg-clip-text text-transparent">
-            Services
+            Solutions
           </span>{" "}
-          that <span className="font-semibold">Drive Success</span>
+          that <span className="font-semibold">Lead to Success</span>
         </h2>
-        <p className="mt-4 text-left font-poppins text-lg font-semibold text-[#2F2F2F]">
-          End to End solutions to build your brand, engage you audience and{" "}
-          <span className="font-bold">grow your business</span> online.
+        <p className="mt-3 font-poppins text-base text-[#5A5A5A]">
+          Simplified solutions with unmatched support to {" "}
+          <span className="font-semibold text-[#1C1C1C]">build your business to the next level.</span>
         </p>
 
         <div className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -212,12 +219,6 @@ export default function Services() {
               <ServiceCard {...s} />
             </ScrollReveal>
           ))}
-        </div>
-
-        <div className="mx-auto mt-6 max-w-md">
-          <ScrollReveal delay={SERVICES.length * 0.1} threshold={0.08}>
-            <ServiceCard {...SOCIAL} />
-          </ScrollReveal>
         </div>
 
         <ScrollReveal delay={0.1} threshold={0.1}>
@@ -242,7 +243,7 @@ export default function Services() {
                   className="mt-7 inline-flex items-center gap-2 rounded-[13px] bg-white px-6 py-2.5 font-poppins text-sm font-semibold text-[#343434] transition-opacity hover:opacity-90"
                 >
                   Let's work together
-                  <svg className="h-3.5 w-3.5" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4.75 9.54169L9.79167 4.5" stroke="#343434" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round"/><path d="M5.29167 4.66669H9.83333V9.20835" stroke="#343434" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                  <svg className="h-3.5 w-3.5" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4.75 9.54169L9.79167 4.5" stroke="#343434" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" /><path d="M5.29167 4.66669H9.83333V9.20835" stroke="#343434" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" /></svg>
                 </a>
               </div>
 

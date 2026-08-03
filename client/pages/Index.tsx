@@ -11,9 +11,9 @@ import ScrollReveal from "@/components/ui/ScrollReveal";
 
 export default function Index() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white overflow-hidden">
       <Header />
-      <main>
+      <main className="overflow-hidden pt-20 md:pt-24">
         {/* Hero: lighter reveal — it's already in view on load */}
         <ScrollReveal distance={24} duration={0.6} threshold={0.05}>
           <Hero />

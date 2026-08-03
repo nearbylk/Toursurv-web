@@ -11,15 +11,42 @@ export default function Contact() {
     subject: "",
     message: "",
   });
+  const [errors, setErrors] = useState({
+    phone: "",
+    email: "",
+  });
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+    if (e.target.name === "email" || e.target.name === "phone") {
+      setErrors((prev) => ({ ...prev, [e.target.name]: "" }));
+    }
   };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+
+    let valid = true;
+    const newErrors = { phone: "", email: "" };
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(formData.email)) {
+      newErrors.email = "Please enter a valid email address";
+      valid = false;
+    }
+
+    const phoneRegex = /^[\d+\-\s]{10,15}$/;
+    if (!phoneRegex.test(formData.phone)) {
+      newErrors.phone = "Please enter a valid phone number";
+      valid = false;
+    }
+
+    setErrors(newErrors);
+
+    if (!valid) return;
+
     // TODO: wire up form submission
   };
 
@@ -27,7 +54,7 @@ export default function Contact() {
     <div className="min-h-screen bg-white">
       <Header />
 
-      <main className="pb-64">
+      <main className="pb-64 pt-20 md:pt-24">
         <ScrollReveal distance={48}>
           {/* ── Hero ── */}
           <section className="px-6 pt-20 pb-24 text-center lg:px-16">
@@ -88,9 +115,12 @@ export default function Contact() {
                         type="tel"
                         value={formData.phone}
                         onChange={handleChange}
-                        className="rounded-lg bg-gray-100 px-4 py-3 font-poppins text-sm text-[#1C1C1C] outline-none placeholder:text-gray-400 focus:ring-2 focus:ring-[#20D3FE]/40"
+                        className={`rounded-lg bg-gray-100 px-4 py-3 font-poppins text-sm text-[#1C1C1C] outline-none placeholder:text-gray-400 focus:ring-2 focus:ring-[#20D3FE]/40 ${errors.phone ? 'ring-2 ring-red-500' : ''}`}
                         placeholder=""
                       />
+                      {errors.phone && (
+                        <span className="font-poppins text-sm text-red-500 mt-1">{errors.phone}</span>
+                      )}
                     </div>
                   </div>
                 </ScrollReveal>
@@ -112,9 +142,12 @@ export default function Contact() {
                         type="email"
                         value={formData.email}
                         onChange={handleChange}
-                        className="rounded-lg bg-gray-100 px-4 py-3 font-poppins text-sm text-[#1C1C1C] outline-none placeholder:text-gray-400 focus:ring-2 focus:ring-[#20D3FE]/40"
+                        className={`rounded-lg bg-gray-100 px-4 py-3 font-poppins text-sm text-[#1C1C1C] outline-none placeholder:text-gray-400 focus:ring-2 focus:ring-[#20D3FE]/40 ${errors.email ? 'ring-2 ring-red-500' : ''}`}
                         placeholder=""
                       />
+                      {errors.email && (
+                        <span className="font-poppins text-sm text-red-500 mt-1">{errors.email}</span>
+                      )}
                     </div>
 
                     {/* Subject */}

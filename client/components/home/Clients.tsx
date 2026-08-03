@@ -1,16 +1,16 @@
 const LOGOS_TOP = [
-  "/1.png",
-  "/2.png",
-  "/3.png",
-  "/4.png",
-  "/5.png",
+  "https://res.cloudinary.com/hvq7yafc/image/upload/v1785150746/1_qpsakf.png",
+  "https://res.cloudinary.com/hvq7yafc/image/upload/v1785150746/2_t04foz.png",
+  "https://res.cloudinary.com/hvq7yafc/image/upload/v1785150746/3_zguhtj.png",
+  "https://res.cloudinary.com/hvq7yafc/image/upload/v1785150746/4_aaygk1.png",
+  "https://res.cloudinary.com/hvq7yafc/image/upload/v1785150746/5_tag6g4.png",
 ];
 
 const LOGOS_BOTTOM = [
-  "/6.png",
-  "/7.png",
-  "/8.png",
-  "/9.png",
+  "https://res.cloudinary.com/hvq7yafc/image/upload/v1785150746/6_cde6ng.png",
+  "https://res.cloudinary.com/hvq7yafc/image/upload/v1785150747/7_tjfro9.png  ",
+  "https://res.cloudinary.com/hvq7yafc/image/upload/v1785150748/8_ojl0xl.png",
+  "https://res.cloudinary.com/hvq7yafc/image/upload/v1785150749/9_eesktf.png",
 ];
 
 function MarqueeRow({ logos, reverse = false }: { logos: string[], reverse?: boolean }) {
@@ -40,16 +40,23 @@ export default function Clients() {
   return (
     <section className="bg-white px-6 py-20 lg:px-16">
       <div className="mx-auto max-w-[1440px]">
-        <p className="mt-6 font-poppins text-2xl text-[#2F2F2F]">
+        <p className="mt-6 font-poppins text-lg md:text-2xl text-[#2F2F2F]">
           / TRUSTED COMPANIES
         </p>
         <br></br>
         <h2 className="mt-4 text-left font-poppins text-3xl font-semibold sm:text-4xl lg:text-5xl">
           <span className="bg-brand-gradient bg-clip-text text-transparent">
-            Who
+            Clients and Partners,
           </span>{" "}
-          <span className="font-semibold">We've Helped</span>
+          <span className="font-semibold"> we built our trust.</span>
         </h2>
+
+        <p className="mt-3 font-poppins text-base text-[#5A5A5A]">
+          Building  {" "}
+          <span className="font-semibold text-[#1C1C1C]">strong trust</span>,
+          with clients and partners takes clear communication, doing what you promise, and showing true care. {" "}
+
+        </p>
 
         <div className="mt-12 flex flex-col gap-12">
           <MarqueeRow logos={LOGOS_TOP} />

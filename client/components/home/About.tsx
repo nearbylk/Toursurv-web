@@ -1,3 +1,5 @@
+import ScrollReveal from "@/components/ui/ScrollReveal";
+
 const TECH_ICONS = [
   "https://api.builder.io/api/v1/image/assets/TEMP/6a600a180dd1f2de81ca239ba704cf48cdba9617?width=190",
   "https://api.builder.io/api/v1/image/assets/TEMP/f8b293db721d284383c3270a5e27dc72ff733aec?width=190",
@@ -32,29 +34,37 @@ export default function About() {
   return (
     <section id="about" className="bg-white px-6 py-20 lg:px-16">
       <div className="mx-auto max-w-[1440px]">
-        <p className="font-poppins text-2xl text-[#191919]">/ ABOUT US</p>
+        <p className="font-poppins text-lg md:text-2xl text-[#191919]">/ ABOUT US</p>
         <h2 className="mt-4 w-full font-poppins text-3xl leading-[1.2] text-[#191919] sm:text-4xl lg:text-5xl">
+
+          Dedicated to enriching businesses through smart, people-focused{" "}
           <span className="bg-brand-gradient bg-clip-text font-semibold text-transparent">
-            Toursurv
+            software solutions
           </span>{" "}
-          is a growing tech company dedicated to{" "}
-          <span className="font-semibold">simplifying</span> businesses
-          through smart, people-focused{" "}
-          <span className="font-semibold">software solutions.</span>
+          since
+          <span className="font-semibold"> 2017.</span>
+          <br />
+          <br />
+          A decade in Business with Technological Experience, Provide the Total Solution
+          <span className="font-semibold"> Research and Development, Hosting, and Infrastructure </span>
+          with support including
+          <span className="font-semibold"> Backup and Security</span>
+          <br />
+          <br />
+
         </h2>
 
         {/* ── PILLARS: horizontal icon + text rows ── */}
         <div className="mt-16 grid grid-cols-1 gap-10 lg:gap-12 sm:grid-cols-2 lg:grid-cols-4">
-          {PILLARS.map((p) => (
-            <div
-              key={p.title}
-              className="flex flex-col items-center justify-center text-center gap-4"
-            >
-              <img src={p.icon} alt="" className="h-20 w-20 shrink-0 object-contain" />
-              <h3 className="max-w-[200px] bg-brand-gradient-v bg-clip-text font-poppins text-lg font-semibold leading-tight text-transparent md:text-xl">
-                {p.title}
-              </h3>
-            </div>
+          {PILLARS.map((p, i) => (
+            <ScrollReveal key={p.title} delay={(i + 1) * 0.1} threshold={0.1}>
+              <div className="flex flex-col items-center justify-center text-center gap-4 transition-transform duration-300 ease-in-out hover:scale-105 hover:cursor-pointer">
+                <img src={p.icon} alt="" className="h-20 w-20 shrink-0 object-contain" />
+                <h3 className="max-w-[200px] bg-brand-gradient-v bg-clip-text font-poppins text-lg font-semibold leading-tight text-transparent md:text-xl">
+                  {p.title}
+                </h3>
+              </div>
+            </ScrollReveal>
           ))}
         </div>
 

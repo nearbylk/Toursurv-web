@@ -1,22 +1,22 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 // Each slide has a large featured image (right) and two stacked thumbnails (left)
 const SLIDES = [
   {
-    featured: "/h.png",
-    top: "/j.png",
-    bottom: "/k.png",
+    featured: "https://res.cloudinary.com/hvq7yafc/image/upload/v1785232166/j_tsr8ic.png",
+    top: "https://res.cloudinary.com/hvq7yafc/image/upload/v1785150763/h_irdpn2.png",
+    bottom: "https://res.cloudinary.com/hvq7yafc/image/upload/v1785232183/k_ruajhd.png",
   },
 
   {
-    featured: "/a.png",
-    top: "/s.png",
-    bottom: "/d.png",
+    featured: "https://res.cloudinary.com/hvq7yafc/image/upload/v1785232183/a_fnbetz.png",
+    top: "https://res.cloudinary.com/hvq7yafc/image/upload/v1785232174/s_im96tf.png",
+    bottom: "https://res.cloudinary.com/hvq7yafc/image/upload/v1785232183/d_ybpsr9.png",
   },
   {
-    featured: "/f.png",
-    top: "/l.png",
-    bottom: "/g.png",
+    featured: "https://res.cloudinary.com/hvq7yafc/image/upload/v1785232183/f_h1vhsl.png",
+    top: "https://res.cloudinary.com/hvq7yafc/image/upload/v1785391137/l_ckdasr.png",
+    bottom: "https://res.cloudinary.com/hvq7yafc/image/upload/v1785232153/g_ocq1ar.png",
   },
 
 ];
@@ -26,12 +26,19 @@ export default function Work() {
   const [active, setActive] = useState(0);
   const slide = SLIDES[active];
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActive((prev) => (prev + 1) % TOTAL_DOTS);
+    }, 4000);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <section id="work" className="bg-white px-6 py-20 lg:px-16">
       <div className="mx-auto max-w-[1440px]">
 
         {/* ── Section header ── */}
-        <p className="text-left font-poppins text-2xl text-[#191919]">
+        <p className="text-left font-poppins text-lg md:text-2xl text-[#191919]">
           / OUR WORK
         </p>
 
@@ -40,15 +47,16 @@ export default function Work() {
             <h2 className="mt-4 text-left font-poppins text-3xl font-semibold sm:text-4xl lg:text-5xl">
 
               <span className="bg-brand-gradient bg-clip-text text-transparent">
-                How
+                Trusted By Brands,
               </span>{" "}
-              <span className="font-semibold">Our Projects Looks</span>
+              <span className="font-semibold"> Loved by Clients</span>
             </h2>
             <p className="mt-3 font-poppins text-base text-[#5A5A5A]">
-              Trusted By{" "}
-              <span className="font-semibold text-[#1C1C1C]">Brands</span>,
-              Loved By{" "}
-              <span className="font-semibold text-[#1C1C1C]">Clients</span>
+              Projects We Delivered with
+              <span className="font-semibold text-[#1C1C1C]"> utmost care and after sales support helped</span>,
+              us to become one of
+              <span className="font-semibold text-[#1C1C1C]"> the most trusted solutions providers </span>
+              nationally and internationally.{" "}
             </p>
           </div>
         </div>
