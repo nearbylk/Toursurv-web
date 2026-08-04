@@ -47,8 +47,8 @@ export default function Footer() {
             </h2>
           </div>
 
-          {/* ── 4-column links grid ── */}
-          <div className="grid grid-cols-1 gap-x-8 gap-y-10 text-center md:grid-cols-4 md:text-left">
+          {/* ── Column grid: Company | Services | Contact (2-wide) | Quick Links ── */}
+          <div className="grid grid-cols-1 gap-y-10 text-center md:grid-cols-5 md:gap-x-8 md:text-left">
 
             {/* Col 1: Company */}
             <div>
@@ -93,12 +93,15 @@ export default function Footer() {
               </ul>
             </div>
 
-            {/* Col 3: Contact */}
-            <div>
+            {/* Col 3–4: Contact — spans 2 grid columns */}
+            <div className="md:col-span-2">
               <h4 className="font-outfit text-xs font-bold uppercase tracking-widest text-white/50">
                 Contact
               </h4>
-              <div className="mt-5 space-y-4 font-outfit text-sm font-light text-white/70">
+              <hr className="mt-3 mb-4 border-white/10" />
+
+              {/* Two office blocks side-by-side on desktop, stacked on mobile */}
+              <div className="grid grid-cols-1 gap-y-6 font-outfit text-sm font-light text-white/70 md:grid-cols-2 md:gap-x-8">
 
                 {/* Sri Lanka Office */}
                 <div>
@@ -123,7 +126,7 @@ export default function Footer() {
               </div>
             </div>
 
-            {/* Col 4: Quick Links */}
+            {/* Col 5: Quick Links */}
             <div>
               <h4 className="font-outfit text-xs font-bold uppercase tracking-widest text-white/50">
                 Quick Links
