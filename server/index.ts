@@ -1,6 +1,7 @@
 import "dotenv/config";
 import express from "express";
 import cors from "cors";
+import { handleContact } from "./routes/contact";
 
 export function createServer() {
   const app = express();
@@ -15,6 +16,9 @@ export function createServer() {
     const ping = process.env.PING_MESSAGE ?? "ping";
     res.json({ message: ping });
   });
+
+  // Contact form
+  app.post("/api/contact", handleContact);
 
 
   return app;
