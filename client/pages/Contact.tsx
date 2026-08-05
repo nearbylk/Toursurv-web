@@ -2,6 +2,7 @@ import { useState } from "react";
 import Header from "@/components/site/Header";
 import Footer from "@/components/site/Footer";
 import ScrollReveal from "@/components/ui/ScrollReveal";
+import type { ContactResponse } from "@shared/api";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -15,6 +16,11 @@ export default function Contact() {
     phone: "",
     email: "",
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<{
+    type: "success" | "error";
+    message: string;
+  } | null>(null);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -25,8 +31,9 @@ export default function Contact() {
     }
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setSubmitStatus(null);
 
     let valid = true;
     const newErrors = { phone: "", email: "" };
@@ -44,10 +51,32 @@ export default function Contact() {
     }
 
     setErrors(newErrors);
-
     if (!valid) return;
 
-    // TODO: wire up form submission
+    setIsSubmitting(true);
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      const data: ContactResponse = await res.json();
+
+      if (data.success) {
+        setSubmitStatus({ type: "success", message: data.message });
+        setFormData({ name: "", phone: "", email: "", subject: "", message: "" });
+      } else {
+        setSubmitStatus({ type: "error", message: data.message });
+      }
+    } catch {
+      setSubmitStatus({
+        type: "error",
+        message: "Something went wrong. Please check your connection and try again.",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -198,14 +227,28 @@ export default function Contact() {
                       <button
                         id="contact-submit"
                         type="submit"
-                        className="rounded-lg bg-brand-gradient px-12 py-3 font-poppins text-sm font-semibold tracking-widest text-white transition-opacity hover:opacity-90"
+                        disabled={isSubmitting}
+                        className="rounded-lg bg-brand-gradient px-12 py-3 font-poppins text-sm font-semibold tracking-widest text-white transition-opacity hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-60"
                       >
-                        SEND
+                        {isSubmitting ? "SENDING..." : "SEND"}
                       </button>
                     </div>
                   </div>
                 </ScrollReveal>
               </form>
+
+              {/* Status Banner */}
+              {submitStatus && (
+                <div
+                  className={`mt-6 rounded-lg px-5 py-4 font-poppins text-sm ${
+                    submitStatus.type === "success"
+                      ? "bg-green-50 text-green-700 ring-1 ring-green-200"
+                      : "bg-red-50 text-red-700 ring-1 ring-red-200"
+                  }`}
+                >
+                  {submitStatus.message}
+                </div>
+              )}
             </div>
           </section>
         </ScrollReveal>

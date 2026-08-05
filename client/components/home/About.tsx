@@ -13,19 +13,19 @@ const TECH_ICONS = [
 
 const PILLARS = [
   {
-    icon: "https://api.builder.io/api/v1/image/assets/TEMP/f1b7943e36788edc95a336d6cafb7a8334168bd3?width=112",
+    icon: "https://res.cloudinary.com/hvq7yafc/image/upload/v1785819157/9_11_g2orgk.png",
     title: "Strategic Excellence",
   },
   {
-    icon: "https://api.builder.io/api/v1/image/assets/TEMP/4ffa13d0823669ee0f8853c8ce366a34e8324a6f?width=100",
+    icon: "https://res.cloudinary.com/hvq7yafc/image/upload/v1785819157/7_3_hulneo.png",
     title: "Creative Solutions",
   },
   {
-    icon: "https://api.builder.io/api/v1/image/assets/TEMP/46d59fb5766c550a64463f110f9095b2892b41df?width=112",
+    icon: "https://res.cloudinary.com/hvq7yafc/image/upload/v1785819157/8_3_wsgx7v.png",
     title: "Comprehensive Service",
   },
   {
-    icon: "https://api.builder.io/api/v1/image/assets/TEMP/b718d7de953113cfcf76aef17abe3e8a253b5f0f?width=112",
+    icon: "https://res.cloudinary.com/hvq7yafc/image/upload/v1785819157/6_3_eperki.png",
     title: "Transparency & Partnership",
   },
 ];
@@ -43,14 +43,14 @@ export default function About() {
           </span>{" "}
           since
           <span className="font-semibold"> 2017.</span>
-          <br />
-          <br />
-          A decade in Business with Technological Experience, Provide the Total Solution
-          <span className="font-semibold"> Research and Development, Hosting, and Infrastructure </span>
-          with support including
-          <span className="font-semibold"> Backup and Security</span>
-          <br />
-          <br />
+          <p className="mt-3 font-poppins text-base text-[#5A5A5A]">
+            A decade in Business with Technological Experience, Provide the Total Solution {" "}
+            <span className="font-semibold text-[#1C1C1C]">Research and Development, Hosting, and Infrastructure </span>
+            with support including {" "}
+            <span className="font-semibold text-[#1C1C1C]">Backup and Security</span>
+          </p>
+
+
 
         </h2>
 
@@ -90,6 +90,6 @@ export default function About() {
           </div> */}
         </div>
       </div>
-    </section>
+    </section >
   );
 }
