@@ -7,12 +7,13 @@ export default function Footer() {
         <svg
           viewBox="0 0 1440 120"
           preserveAspectRatio="none"
-          className="relative block w-full h-[80px] md:hidden"
+          className="relative block w-full h-[90px] md:hidden"
         >
-          {/* Mobile: curved folder tab shape */}
+          {/* Mobile: steeper curved folder tab shape */}
           <path
             fill="#0f0f14"
-            d="M0,120 L0,50 L576,50 C648,50 648,0 720,0 L1440,0 L1440,120 Z"
+            d="M0,120 L0,90 L600,90 C680,90 750,0 800,0 L1440,0 L1440,120 Z"
+
           />
         </svg>
         <svg
@@ -48,8 +49,8 @@ export default function Footer() {
             </h2>
           </div>
 
-          {/* ── Column grid: Company | Services | Contact (2-wide) | Quick Links ── */}
-          <div className="grid grid-cols-1 gap-y-10 text-center md:grid-cols-5 md:gap-x-8 md:text-left">
+          {/* ── Column grid: Company | Services | Contact ── */}
+          <div className="grid grid-cols-1 gap-y-10 text-center md:grid-cols-3 md:gap-x-8 md:text-left">
 
             {/* Col 1: Company */}
             <div>
@@ -64,38 +65,39 @@ export default function Footer() {
               </p>
             </div>
 
-            {/* Col 2: Services */}
+            {/* services */}
             <div>
               <h4 className="font-outfit text-xs font-bold uppercase tracking-widest text-white/50">
                 Services
               </h4>
+              <hr className="mt-3 mb-4 border-white/10" />
 
+              {/* Two office blocks side-by-side on desktop, stacked on mobile */}
+              <div className="grid grid-cols-1 gap-y-6 font-outfit text-sm font-light text-white/70 md:grid-cols-2 md:gap-x-8">
 
+                {/* Sri Lanka Office */}
+                <div>
+                  <p>Web Development</p>
+                  <p>Software Development</p>
+                  <p>AI Solutions</p>
+                  <p>Mobile App Development</p>
+                  <p>POS & Cashier Systems</p>
 
+                </div>
 
+                {/* Bangladesh Office */}
+                <div>
+                  <p>IoT Solutions</p>
+                  <p>Social Media Marketing</p>
+                  <p>Cloud Infrastructure Solutions</p>
+                  <p>Web Development</p>
+                </div>
 
-
-
-
-
-
-
-
-              <ul className="mt-5 space-y-3 font-outfit text-sm font-light text-white/70">
-                <li className="transition-colors hover:text-white">Web Development</li>
-                <li className="transition-colors hover:text-white">Software Development</li>
-                <li className="transition-colors hover:text-white">AI Solutions</li>
-                <li className="transition-colors hover:text-white">Mobile App Development</li>
-                <li className="transition-colors hover:text-white">POS & Cashier Systems</li>
-                <li className="transition-colors hover:text-white">IoT Solutions</li>
-                <li className="transition-colors hover:text-white">Social Media Marketing</li>
-                <li className="transition-colors hover:text-white">Cloud Infrastructure Solutions</li>
-                <li className="transition-colors hover:text-white">Event Management</li>
-              </ul>
+              </div>
             </div>
 
-            {/* Col 3–4: Contact — spans 2 grid columns */}
-            <div className="md:col-span-2">
+            {/* Col 3: Contact */}
+            <div>
               <h4 className="font-outfit text-xs font-bold uppercase tracking-widest text-white/50">
                 Contact
               </h4>
@@ -125,27 +127,6 @@ export default function Footer() {
                 </div>
 
               </div>
-            </div>
-
-            {/* Col 5: Quick Links */}
-            <div>
-              <h4 className="font-outfit text-xs font-bold uppercase tracking-widest text-white/50">
-                Quick Links
-              </h4>
-              <ul className="mt-5 space-y-3 font-outfit text-sm font-light text-white/70">
-                <li>
-                  <a href="#work" className="transition-colors hover:text-white">Portfolio</a>
-                </li>
-                <li>
-                  <a href="#services" className="transition-colors hover:text-white">Our Products</a>
-                </li>
-                <li>
-                  <a href="#about" className="transition-colors hover:text-white">About Us</a>
-                </li>
-                <li>
-                  <a href="#contact" className="transition-colors hover:text-white">Contact Us</a>
-                </li>
-              </ul>
             </div>
 
           </div>
