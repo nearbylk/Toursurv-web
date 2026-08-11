@@ -25,7 +25,14 @@ export default function Contact() {
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
-    setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+    let value = e.target.value;
+
+    if (e.target.name === "phone") {
+      value = value.replace(/\D/g, "");
+      if (value.length > 10) return;
+    }
+
+    setFormData((prev) => ({ ...prev, [e.target.name]: value }));
     if (e.target.name === "email" || e.target.name === "phone") {
       setErrors((prev) => ({ ...prev, [e.target.name]: "" }));
     }
@@ -142,6 +149,7 @@ export default function Contact() {
                         id="contact-phone"
                         name="phone"
                         type="tel"
+                        maxLength={10}
                         value={formData.phone}
                         onChange={handleChange}
                         className={`rounded-lg bg-gray-100 px-4 py-3 font-poppins text-sm text-[#1C1C1C] outline-none placeholder:text-gray-400 focus:ring-2 focus:ring-[#20D3FE]/40 ${errors.phone ? 'ring-2 ring-red-500' : ''}`}
@@ -240,11 +248,10 @@ export default function Contact() {
               {/* Status Banner */}
               {submitStatus && (
                 <div
-                  className={`mt-6 rounded-lg px-5 py-4 font-poppins text-sm ${
-                    submitStatus.type === "success"
+                  className={`mt-6 rounded-lg px-5 py-4 font-poppins text-sm ${submitStatus.type === "success"
                       ? "bg-green-50 text-green-700 ring-1 ring-green-200"
                       : "bg-red-50 text-red-700 ring-1 ring-red-200"
-                  }`}
+                    }`}
                 >
                   {submitStatus.message}
                 </div>
