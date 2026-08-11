@@ -38,7 +38,7 @@ function MarqueeRow({ logos, reverse = false }: { logos: string[], reverse?: boo
 
 export default function Clients() {
   return (
-    <section className="bg-white px-6 py-20 lg:px-16">
+    <section className="bg-white px-6 pt-6 pb-20 md:pt-20 lg:px-16">
       <div className="mx-auto max-w-[1440px]">
         <p className="mt-6 font-poppins text-lg md:text-2xl text-[#2F2F2F]">
           / TRUSTED COMPANIES

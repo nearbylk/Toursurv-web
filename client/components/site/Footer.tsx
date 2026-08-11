@@ -5,14 +5,14 @@ export default function Footer() {
       {/* ── Top divider: asymmetric left-dip on mobile, step-curve on desktop ── */}
       <div className="absolute left-0 right-0 bottom-full w-full overflow-hidden leading-none">
         <svg
-          viewBox="0 0 1440 80"
+          viewBox="0 0 1440 120"
           preserveAspectRatio="none"
-          className="relative block w-full h-[60px] md:hidden"
+          className="relative block w-full h-[80px] md:hidden"
         >
-          {/* Mobile: curved dip on left only, straight across on right */}
+          {/* Mobile: curved folder tab shape */}
           <path
             fill="#0f0f14"
-            d="M0,120 L0,40 L600,40 C650,40 700,0 750,0 L3000,0 L3000,120 Z"
+            d="M0,120 L0,50 L576,50 C648,50 648,0 720,0 L1440,0 L1440,120 Z"
           />
         </svg>
         <svg
@@ -34,16 +34,17 @@ export default function Footer() {
         <div className="mx-auto max-w-[1440px]">
 
           {/* ── "Join us today…" headline row ── */}
-          <div className="relative top-0 md:-top-14 z-8 mb-8 flex flex-col items-center justify-between gap-6 w-full md:flex-row md:items-center">
+          <div className="relative -top-20 md:-top-14 z-20 -mb-6 md:mb-8 flex flex-col items-center justify-between gap-6 w-full md:flex-row md:items-center">
             {/* Left spacer / brand tagline */}
             <p className="max-w-xs font-outfit text-sm font-light text-white/50">
 
             </p>
 
             {/* Large headline on the right */}
-            <h2 className="w-full text-center md:text-right font-poppins text-xl md:text-4xl font-semibold leading-tight">
-              <span className="text-[#20D3FE]">Your success story </span>{" "}
-              <span className="font-normal text-white/70">begins here.</span>
+            <h2 className="w-full text-right font-poppins text-lg md:text-4xl font-semibold leading-tight">
+              <span className="text-[#20D3FE]">Your success story </span>
+              <br className="block md:hidden" />
+              <span className="inline-block mr-14 md:mr-0 font-normal text-white/70">begins here.</span>
             </h2>
           </div>
 
