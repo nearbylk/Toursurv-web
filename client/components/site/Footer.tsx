@@ -12,7 +12,7 @@ export default function Footer() {
           {/* Mobile: steeper curved folder tab shape */}
           <path
             fill="#0f0f14"
-            d="M0,120 L0,90 L600,90 C680,90 750,0 800,0 L1440,0 L1440,120 Z"
+            d="M0,120 L0,90 L550,90 C620,90 640,0 750,0 L1440,0 L1440,120 Z"
 
           />
         </svg>
@@ -113,8 +113,8 @@ export default function Footer() {
                   <p>Hotline: <a href="tel:+94711108108" className="transition-colors hover:text-white">+94 711 108 108</a></p>
                   <p className="mt-1 leading-snug">359/19, 06th Lane, Maya Mawatha,<br />Makumbura, Pannipitiya, Sri Lanka</p>
                   <p className="mt-1">
-                    <a href="mailto:toursurvs@gmail.com" className="transition-colors hover:text-white">
-                      toursurvs@gmail.com
+                    <a href="mailto:toursurvmarketing@gmail.com" className="transition-colors hover:text-white">
+                      toursurvmarketing@gmail.com
                     </a>
                   </p>
                 </div>
