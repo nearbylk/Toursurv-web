@@ -27,7 +27,7 @@ export default function Cta() {
             <div className="mt-8 flex flex-wrap justify-center gap-4">
               {/* Start Your Project */}
               <a
-                href="mailto:toursurv@gmail.com"
+                href="mailto:toursurvmarketing@gmail.com"
                 className="inline-flex items-center gap-2 rounded-[13px] bg-white px-6 py-2.5 font-poppins text-sm font-medium text-[#343434] transition-opacity hover:opacity-90"
               >
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
