@@ -90,7 +90,7 @@ export default function Footer() {
                   <p>IoT Solutions</p>
                   <p>Social Media Marketing</p>
                   <p>Cloud Infrastructure Solutions</p>
-                  <p>Web Development</p>
+                  <p>Event Management</p>
                 </div>
 
               </div>
