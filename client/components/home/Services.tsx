@@ -92,9 +92,9 @@ const SERVICES = [
 // target number + suffix symbol
 const STATS: { target: number; suffix: string; label: string }[] = [
   { target: 50, suffix: "+", label: "Projects Completed" },
-  { target: 30, suffix: "+", label: "Happy Clients" },
-  { target: 7, suffix: "+", label: "Years of experience" },
-  { target: 98, suffix: "%", label: "Client Satisfaction" },
+  { target: 45, suffix: "+", label: "Happy Clients" },
+  { target: 9, suffix: "+", label: "Years of experience" },
+  { target: 90, suffix: "%", label: "Client Satisfaction" },
 ];
 
 const STAT_ICONS = [

@@ -25,7 +25,7 @@ export default function Index() {
         </ScrollReveal>
 
         {/* Services */}
-        <ScrollReveal delay={0.05} threshold={0.1}>
+        <ScrollReveal delay={0.05} threshold={0}>
           <Services />
         </ScrollReveal>
 

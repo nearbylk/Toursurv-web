@@ -4,18 +4,7 @@ export default function Footer() {
 
       {/* ── Top divider: asymmetric left-dip on mobile, step-curve on desktop ── */}
       <div className="absolute left-0 right-0 bottom-full w-full overflow-hidden leading-none">
-        <svg
-          viewBox="0 0 1440 120"
-          preserveAspectRatio="none"
-          className="relative block w-full h-[90px] md:hidden"
-        >
-          {/* Mobile: steeper curved folder tab shape */}
-          <path
-            fill="#0f0f14"
-            d="M0,120 L0,90 L550,90 C620,90 640,0 750,0 L1440,0 L1440,120 Z"
-
-          />
-        </svg>
+        {/* Mobile SVG removed per user request */}
         <svg
           viewBox="0 0 1440 120"
           preserveAspectRatio="none"
@@ -31,11 +20,11 @@ export default function Footer() {
 
 
       {/* ── Main footer body ── */}
-      <div className="px-6 pb-8 lg:px-16">
+      <div className="px-6 pt-12 md:pt-0 pb-8 lg:px-16">
         <div className="mx-auto max-w-[1440px]">
 
           {/* ── "Join us today…" headline row ── */}
-          <div className="relative -top-20 md:-top-14 z-20 -mb-6 md:mb-8 flex flex-col items-center justify-between gap-6 w-full md:flex-row md:items-center">
+          <div className="relative top-0 md:-top-14 z-20 mt-8 md:mt-0 mb-6 md:mb-8 hidden md:flex flex-col items-center justify-between gap-6 w-full md:flex-row md:items-center">
             {/* Left spacer / brand tagline */}
             <p className="max-w-xs font-outfit text-sm font-light text-white/50">
 
